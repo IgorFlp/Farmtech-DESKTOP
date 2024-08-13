@@ -98,9 +98,9 @@
             this.lblAviso.AutoSize = true;
             this.lblAviso.Location = new System.Drawing.Point(185, 147);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(0, 13);
+            this.lblAviso.Size = new System.Drawing.Size(34, 13);
             this.lblAviso.TabIndex = 6;
-            this.lblAviso.Text = "TESTE";
+            this.lblAviso.Text = "Teste";
             // 
             // Login
             // 
@@ -131,7 +131,7 @@
         private System.Windows.Forms.TextBox inputSenha;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblAviso;
-        public System.Windows.Forms.Label lblAvisoGs{ get { return lblAviso; } set { lblAviso = value; } }
+        public System.Windows.Forms.Label lblAvisoGs{ get { return lblAviso; } private set { lblAviso = value; } }
         
     }
 }

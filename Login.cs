@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 
@@ -17,10 +18,14 @@ namespace Farmtech_DESKTOP
     
     public partial class Login : Form
     {
-        
+        public System.Windows.Forms.Timer timer;
         public Login()
         {
             InitializeComponent();
+
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 3000;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,7 +35,7 @@ namespace Farmtech_DESKTOP
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Model.LoginModel(inputUser.Text, inputSenha.Text);            
+            Model.LoginModel(this,inputUser.Text, inputSenha.Text);            
         }
 
         private void inputUser_TextChanged(object sender, EventArgs e)
