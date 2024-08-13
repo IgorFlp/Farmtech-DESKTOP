@@ -14,7 +14,14 @@ namespace Farmtech_DESKTOP
         //Login VISUALIZA existencia do usuario e retorna erro ou efetua login
         public static string LoginDAO(string user,string senha)
         {
-            return "Incorreto";
+            if (user == "Jorge" && senha == "123")
+            {
+                return "Correto";
+            }
+            else
+            {
+                return "Incorreto";
+            }
         }
     }
 }
