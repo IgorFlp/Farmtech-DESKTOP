@@ -7,55 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
+using Farmtech.Model;
 
 
 
 
-namespace Farmtech_DESKTOP
+namespace Farmtech.View
 {
     
     public partial class Login : Form
     {
-        public System.Windows.Forms.Timer timer;
+        
         public Login()
         {
             InitializeComponent();
 
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 3000;
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        }     
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Model.LoginModel(this,inputUser.Text, inputSenha.Text);            
+            LoginModel.logar(inputUser.Text, inputSenha.Text);            
         }
 
-        private void inputUser_TextChanged(object sender, EventArgs e)
+        private void attLogin(string res)
         {
+            if (res != "Correto")
+            {
+                lblAvisoGs.ForeColor = Color.Red;
+                lblAvisoGs.Text = "Usuario ou senha incorreto tente novamente";
+                //loginform.lblAvisoGs.Text = string.Empty;
+            }
+            else
+                {
+                    lblAvisoGs.ForeColor = Color.Black;
+                    lblAvisoGs.Text = "Efetuando login...";
+                    //Thread.Sleep(1000);
+                    this.Hide();
+                    //1-Home
+                    AbrirFormModel.abrirForm("Home");
 
-        }
-
-        private void inputSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+                }
+            }
     }
 }

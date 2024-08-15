@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Farmtech_DESKTOP.Properties
+namespace Farmtech.View.Properties
 {
 
 
