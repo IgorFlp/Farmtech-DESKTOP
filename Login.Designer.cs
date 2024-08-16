@@ -1,4 +1,4 @@
-﻿namespace Farmtech_DESKTOP
+﻿namespace Farmtech.View
 {
     partial class Login
     {
@@ -55,7 +55,7 @@
             this.lblUser.Size = new System.Drawing.Size(43, 13);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "Usuário";
-            this.lblUser.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // lblSenha
             // 
@@ -65,7 +65,7 @@
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 2;
             this.lblSenha.Text = "Senha";
-            this.lblSenha.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // inputUser
             // 
@@ -73,7 +73,7 @@
             this.inputUser.Name = "inputUser";
             this.inputUser.Size = new System.Drawing.Size(173, 20);
             this.inputUser.TabIndex = 3;
-            this.inputUser.TextChanged += new System.EventHandler(this.inputUser_TextChanged);
+            
             // 
             // inputSenha
             // 
@@ -81,7 +81,7 @@
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.Size = new System.Drawing.Size(173, 20);
             this.inputSenha.TabIndex = 4;
-            this.inputSenha.TextChanged += new System.EventHandler(this.inputSenha_TextChanged);
+            
             // 
             // lblTitulo
             // 
@@ -116,7 +116,7 @@
             this.Controls.Add(this.bntLogin);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
