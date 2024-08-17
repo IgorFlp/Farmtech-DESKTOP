@@ -46,7 +46,7 @@ namespace Farmtech.View
                     //Thread.Sleep(1000);
                     this.Hide();
                     //1-Home
-                    AbrirFormModel.abrirForm("Home");
+                    AbrirForm.abrirForm("Home");
 
                 }
             }
