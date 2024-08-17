@@ -27,7 +27,7 @@ namespace Farmtech.View
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             //3 -Usuario novo
-            AbrirFormModel.abrirForm("Usuario_Incluir");
+            AbrirForm.abrirForm("Usuario_Incluir");
         }
     }
 }
