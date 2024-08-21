@@ -46,9 +46,9 @@
     <Compile Include="UsuarioModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Farmtech.Controller\Farmtech.Controller.csproj">
-      <Project>{68d9827c-baa2-4e1d-bbce-1c14238cc85b}</Project>
-      <Name>Farmtech.Controller</Name>
+    <ProjectReference Include="..\Farmtech.DAO\Farmtech.DAO.csproj">
+      <Project>{5fac0f96-da46-4a5b-b7f8-279b1a8e3516}</Project>
+      <Name>Farmtech.DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Farmtech.Entidades\Farmtech.Entidades.csproj">
       <Project>{183dc140-5bed-4ffd-a920-8784e38cb618}</Project>

@@ -25,7 +25,7 @@ namespace Farmtech.DAO
         //    }
         //}
         //Login VISUALIZA existencia do usuario e retorna erro ou efetua login
-        public static string LoginDAO(UsuarioEnt usuario)
+        public static string Logar(UsuarioEnt usuario)
         {
             if (usuario.Nome == "Jorge" && usuario.Senha == "123")
             {

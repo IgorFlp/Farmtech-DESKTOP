@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Farmtech.DAO;
+using Farmtech.Entidades;
+using Farmtech.Controller;
 
 namespace Farmtech.Model
 {
+
     internal class UsuarioModel
     {
-        public class CriaUsuario(Object usuario)
+        
+        public UsuarioModel()
+        {
+            UsuarioEnt usuario = new UsuarioEnt();
+        }
+        public void CriaUsuario(UsuarioEnt usuario)
         {
 
         }

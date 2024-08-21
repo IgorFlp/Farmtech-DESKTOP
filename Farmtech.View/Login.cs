@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Farmtech.Entidades;
 using Farmtech.Model;
 
 
@@ -28,7 +29,11 @@ namespace Farmtech.View
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginModel.logar(inputUser.Text, inputSenha.Text);            
+           UsuarioEnt usuario = new UsuarioEnt();
+           usuario.Login = inputUser.Text;
+           usuario.Senha = inputSenha.Text;
+           string res = LoginModel.logar(usuario); 
+           attLogin(res);
         }
 
         private void attLogin(string res)
