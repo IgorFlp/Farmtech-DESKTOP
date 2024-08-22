@@ -13,12 +13,6 @@ namespace Farmtech.View
 {
     public partial class Usuario : Form
     {
-        private string nome;
-        private string login;
-        private string senha;
-        public string Nome {get{ return this.nome; }set{ this.nome = value; } }
-        public string Login { get{ return this.login;} set{ this.nome = value;} }
-        public string Senha { get { return this.senha; } set { this.senha = value; } }
         public Usuario()
         {
             InitializeComponent();

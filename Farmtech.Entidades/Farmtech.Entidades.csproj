@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProdutoEnt.cs" />
+    <Compile Include="LoginEnt.cs" />
     <Compile Include="UsuarioEnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

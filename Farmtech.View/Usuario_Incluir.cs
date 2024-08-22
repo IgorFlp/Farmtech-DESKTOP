@@ -18,17 +18,7 @@ namespace Farmtech.View
         public Usuario_Incluir()
         {
             InitializeComponent();
-        }
-
-        
-        private void btnCriar_Click(object sender, EventArgs e)
-        {                       
-            UsuarioModel model = new UsuarioModel();
-            string login = txtLogin.Text;
-            string senha = txtSenha.Text;
-            string nome = txtNome.Text;
-            string cargo = boxCargo.Text;
-            model.CriaUsuario(login,senha,nome,cargo);
-        }                   
+        }           
+                     
     }
 }

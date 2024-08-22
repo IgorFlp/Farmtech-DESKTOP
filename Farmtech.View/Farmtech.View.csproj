@@ -108,6 +108,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Farmtech.Entidades\Farmtech.Entidades.csproj">
+      <Project>{183dc140-5bed-4ffd-a920-8784e38cb618}</Project>
+      <Name>Farmtech.Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Farmtech.Model\Farmtech.Model.csproj">
       <Project>{6df2cb82-cb02-42b4-9074-d2d2df6783fb}</Project>
       <Name>Farmtech.Model</Name>
