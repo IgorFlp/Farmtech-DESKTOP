@@ -36,6 +36,8 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnCriar = new System.Windows.Forms.Button();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.boxCargo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +53,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(12, 60);
+            this.lblNome.Location = new System.Drawing.Point(12, 112);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 1;
@@ -60,7 +62,7 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(12, 96);
+            this.lblLogin.Location = new System.Drawing.Point(12, 56);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(33, 13);
             this.lblLogin.TabIndex = 2;
@@ -69,7 +71,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(12, 131);
+            this.lblSenha.Location = new System.Drawing.Point(12, 86);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 3;
@@ -77,21 +79,21 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(61, 60);
+            this.txtNome.Location = new System.Drawing.Point(61, 112);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(174, 20);
             this.txtNome.TabIndex = 4;
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(61, 93);
+            this.txtLogin.Location = new System.Drawing.Point(61, 53);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(174, 20);
             this.txtLogin.TabIndex = 5;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(61, 128);
+            this.txtSenha.Location = new System.Drawing.Point(61, 83);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(174, 20);
             this.txtSenha.TabIndex = 6;
@@ -106,11 +108,38 @@
             this.btnCriar.UseVisualStyleBackColor = true;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(12, 143);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(35, 13);
+            this.lblCargo.TabIndex = 8;
+            this.lblCargo.Text = "Cargo";
+            // 
+            // boxCargo
+            // 
+            this.boxCargo.FormattingEnabled = true;
+            this.boxCargo.Items.AddRange(new object[] {
+            "Gerente de estoque",
+            "Gerente de produção",
+            "Gerente de vendas",
+            "Gerente geral",
+            "Estoquista",
+            "Produtor",
+            "Vendedor"});
+            this.boxCargo.Location = new System.Drawing.Point(61, 143);
+            this.boxCargo.Name = "boxCargo";
+            this.boxCargo.Size = new System.Drawing.Size(174, 21);
+            this.boxCargo.TabIndex = 9;
+            // 
             // Usuario_Incluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(275, 233);
+            this.Controls.Add(this.boxCargo);
+            this.Controls.Add(this.lblCargo);
             this.Controls.Add(this.btnCriar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
@@ -136,5 +165,7 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnCriar;
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.ComboBox boxCargo;
     }
 }
