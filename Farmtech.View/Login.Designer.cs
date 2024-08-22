@@ -55,7 +55,6 @@
             this.lblUser.Size = new System.Drawing.Size(43, 13);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "Usuário";
-            
             // 
             // lblSenha
             // 
@@ -65,7 +64,6 @@
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 2;
             this.lblSenha.Text = "Senha";
-            
             // 
             // inputUser
             // 
@@ -73,7 +71,6 @@
             this.inputUser.Name = "inputUser";
             this.inputUser.Size = new System.Drawing.Size(173, 20);
             this.inputUser.TabIndex = 3;
-            
             // 
             // inputSenha
             // 
@@ -81,7 +78,6 @@
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.Size = new System.Drawing.Size(173, 20);
             this.inputSenha.TabIndex = 4;
-            
             // 
             // lblTitulo
             // 
@@ -98,9 +94,8 @@
             this.lblAviso.AutoSize = true;
             this.lblAviso.Location = new System.Drawing.Point(185, 147);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(34, 13);
+            this.lblAviso.Size = new System.Drawing.Size(0, 13);
             this.lblAviso.TabIndex = 6;
-            this.lblAviso.Text = "Teste";
             // 
             // Login
             // 
@@ -116,7 +111,6 @@
             this.Controls.Add(this.bntLogin);
             this.Name = "Login";
             this.Text = "Login";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 

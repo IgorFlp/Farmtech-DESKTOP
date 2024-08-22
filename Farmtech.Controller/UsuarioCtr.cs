@@ -10,11 +10,11 @@ namespace Farmtech.Controller
 {
     public class UsuarioCtr
     {
-        private UsuarioDAO usuarioDAO;
+        private LoginDAO usuarioDAO;
 
         public UsuarioCtr()
         {
-            usuarioDAO = new UsuarioDAO();
+            usuarioDAO = new LoginDAO();
         }
         public void CriaUsuario(UsuarioEnt usuario)
         {

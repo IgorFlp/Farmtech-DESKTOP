@@ -23,8 +23,6 @@ namespace Farmtech.View
         public Login()
         {
             InitializeComponent();
-
-
         }     
         
         private void btnLogin_Click(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace Farmtech.View
                     //Thread.Sleep(1000);
                     this.Hide();
                     //1-Home
-                    AbrirFormModel.abrirForm("Home");
+                    AbrirForm.abrirForm("Home");
 
                 }
             }

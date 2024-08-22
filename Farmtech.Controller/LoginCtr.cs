@@ -10,15 +10,15 @@ namespace Farmtech.Controller
 {
     public class LoginCtr
     {
-        private UsuarioDAO usuarioDAO;
+        private LoginDAO usuarioDAO;
 
         public LoginCtr()
         {
-            usuarioDAO = new UsuarioDAO();
+            usuarioDAO = new LoginDAO();
         }
         public string Logar(UsuarioEnt usuario)
         {
-            return UsuarioDAO.LoginDAO(usuario);
+            return LoginDAO.LoginDAO(usuario);
         }
     }
 }
