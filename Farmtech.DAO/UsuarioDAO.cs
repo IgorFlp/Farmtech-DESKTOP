@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Farmtech.DAO
 {
+    private string connectionString = "";
     public class UsuarioDAO
     {
         //Cad usuario CRIA, DELETA, ALTERA, OU VISUALIZA Tb_Usuario

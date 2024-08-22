@@ -20,7 +20,7 @@ namespace Farmtech.View
         {
             switch (menu) {
                 case "Home":
-                    var home = new Home();
+                    var home = new Inicio();
                     home.Show();
                     break;
                 case "Usuario":

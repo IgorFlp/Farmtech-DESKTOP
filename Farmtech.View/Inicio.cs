@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Farmtech.View
 {
-    public partial class Home : Form
+    public partial class Inicio : Form
     {
-        public Home()
+        public Inicio()
         {
             InitializeComponent();
         }

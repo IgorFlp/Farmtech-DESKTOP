@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Farmtech.View
 {
-    partial class Home
+    partial class Inicio
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,7 +39,7 @@ namespace Farmtech.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Vendas = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
