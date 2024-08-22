@@ -26,12 +26,7 @@ namespace Farmtech.View
                 case "Usuario":
                     var usuario = new Usuario();
                     usuario.Show();
-                    break; 
-                case "Usuario_Incluir":
-                    var usuarioIncluir = new Usuario_Incluir();
-                    Console.WriteLine("usuario_incluir ativou");
-                    usuarioIncluir.Show();
-                    break;
+                    break;                 
             }
         }
     }
