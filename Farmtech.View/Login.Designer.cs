@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bntLogin = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.inputSenha = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblAviso = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bntLogin
@@ -76,6 +79,7 @@
             // 
             this.inputSenha.Location = new System.Drawing.Point(188, 124);
             this.inputSenha.Name = "inputSenha";
+            this.inputSenha.PasswordChar = '*';
             this.inputSenha.Size = new System.Drawing.Size(173, 20);
             this.inputSenha.TabIndex = 4;
             // 
@@ -97,11 +101,22 @@
             this.lblAviso.Size = new System.Drawing.Size(0, 13);
             this.lblAviso.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(163, 155);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 212);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.inputSenha);
@@ -111,6 +126,7 @@
             this.Controls.Add(this.bntLogin);
             this.Name = "Login";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +141,8 @@
         private System.Windows.Forms.TextBox inputSenha;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.PictureBox pictureBox1;
+
         public System.Windows.Forms.Label lblAvisoGs{ get { return lblAviso; } private set { lblAviso = value; } }
         
     }

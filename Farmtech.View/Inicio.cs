@@ -1,3 +1,4 @@
+using Farmtech_DESKTOP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,12 @@ namespace Farmtech.View
         private void button3_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Show();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Farmtech.View
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           UsuarioEnt usuario = new UsuarioEnt();
+           LoginEnt usuario = new LoginEnt();
            usuario.Login = inputUser.Text;
            usuario.Senha = inputSenha.Text;
            string res = LoginModel.logar(usuario); 
@@ -39,7 +39,7 @@ namespace Farmtech.View
             if (res != "Correto")
             {
                 lblAvisoGs.ForeColor = Color.Red;
-                lblAvisoGs.Text = "Usuario ou senha incorreto tente novamente";
+                lblAvisoGs.Text = "Usuario ou senha incorreto";
                 //loginform.lblAvisoGs.Text = string.Empty;
             }
             else

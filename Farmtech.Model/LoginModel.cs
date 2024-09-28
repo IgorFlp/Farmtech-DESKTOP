@@ -15,7 +15,7 @@ namespace Farmtech.Model
     public class LoginModel
     {
         public static event Action<string> resultLogin;
-        public static string logar(UsuarioEnt usuario)
+        public static string logar(LoginEnt usuario)
         {
             string res = LoginDAO.Logar(usuario);
             return res;

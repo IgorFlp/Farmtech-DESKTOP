@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,18 +20,56 @@ namespace Farmtech.DAO
     public class LoginDAO
     {
         
-        public static string Logar(UsuarioEnt usuario)
-        {                     
-            //Criar leitura no banco de dados e retornar Correto ou incorreto
-            //Depois que criar pode apagar essa parte de baixo VV
-            if (usuario.Nome == "Jorge" && usuario.Senha == "123")
+        public static string Logar(LoginEnt usuario)
+        {                    
+           
+            using (SqlConnection sqlconn = new SqlConnection(configBanco.connectionString))
             {
-                return "Correto";
-            }
-            else
-            {
-                return "Incorreto";
+                sqlconn.Open();                                           
+                string query = "SELECT nome, senha FROM Db_farmtech.dbo.Tb_usuario WHERE nome = @Nome";
+                SqlCommand cmd = new SqlCommand(query, sqlconn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Nome", usuario.Login);                
+                SqlDataReader leitor = cmd.ExecuteReader();
+
+                if (leitor.Read())
+                {
+                    string nomeUsuario = leitor["nome"].ToString();
+                    string senhaUsuario = leitor["senha"].ToString();
+
+                    // Verificar se o password fornecido corresponde ao password do usuário
+                    if (usuario.Senha == senhaUsuario)
+                    {
+                        Console.WriteLine($"Login bem-sucedido para o usuário '{nomeUsuario}'.");
+                        leitor.Close();
+                        sqlconn.Close();
+                        return "Correto";
+                    }
+                    else
+                    {                                              
+                                                
+                        {
+                            leitor.Close();
+                            sqlconn.Close();
+                            return "Incorreto";                             
+                        }
+                        
+                    }
+                    
+                }
+                else
+                {
+                    leitor.Close();
+                    sqlconn.Close();
+                    return "Incorreto";
+                    
+                }
+                
+
             }
         }
+            //Criar leitura no banco de dados e retornar Correto ou incorreto
+            //Depois que criar pode apagar essa parte de baixo VV           
+        
     }
 }
