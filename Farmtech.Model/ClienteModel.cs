@@ -10,7 +10,7 @@ namespace Farmtech.Model
 {
     public class ClienteModel
     {
-        public static string Criar(ClientEnt cliente, EnderecoEnt endereco)
+        public static string Criar(ClienteEnt cliente, ClienteEnderecoEnt endereco)
         {
             //Validação de cpf
             if (cliente.Cpf.Length > 11 || cliente.Cpf.Length < 11)
@@ -109,6 +109,34 @@ namespace Farmtech.Model
                 string res = clienteDAO.Criar(cliente, endereco);
                 return res;
             }
+        }
+        public string Excluir(String cpf)
+        {
+            ClienteDAO clienteDAO=new ClienteDAO();
+            string res = clienteDAO.Excluir(cpf);
+            return res;        
+            
+        }
+        public ClienteEnt BuscarCliente(String cpf) { 
+            ClienteEnt clienteEnt = new ClienteEnt();
+            
+
+            ClienteDAO clienteDAO = new ClienteDAO();
+            clienteEnt = clienteDAO.BuscarCliente(cpf);
+            return clienteEnt;
+        }
+        public ClienteEnderecoEnt BuscarEndereco(String cpf)
+        {
+            ClienteDAO  clienteDAO = new ClienteDAO();
+            ClienteEnderecoEnt enderecoEnt = new ClienteEnderecoEnt();
+            enderecoEnt = clienteDAO.BuscarEndereco(cpf);
+            return enderecoEnt; 
+        }
+        public string Atualizar(ClienteEnt clienteEnt, ClienteEnderecoEnt enderecoEnt)
+        {
+            ClienteDAO clienteDAO = new ClienteDAO();
+            String res = clienteDAO.Atualizar(clienteEnt, enderecoEnt);
+            return res; 
         }
     }
 }

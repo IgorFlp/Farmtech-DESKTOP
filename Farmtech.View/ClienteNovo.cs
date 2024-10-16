@@ -23,8 +23,8 @@ namespace Farmtech.View
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            ClientEnt cliente = new ClientEnt();    
-            EnderecoEnt endereco = new EnderecoEnt();
+            ClienteEnt cliente = new ClienteEnt();    
+            ClienteEnderecoEnt endereco = new ClienteEnderecoEnt();
             cliente.Nome = txtNome.Text;
             cliente.Cpf = txtCpf.Text;
             cliente.Telefone = txtTelefone.Text;

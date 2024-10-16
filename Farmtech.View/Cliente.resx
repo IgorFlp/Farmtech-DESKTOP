@@ -121,7 +121,7 @@
   <data name="btnIncluir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        bAAAD2wBoQ/K+gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABx8SURBVHhe7d1P
+        awAAD2sB80tshQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABx8SURBVHhe7d1P
         yO53mR7wN86ZkBrpIpgigYZmkXbRGInMuo6oZDaGEHCR7Mwuy9pVlAqB2RQsZqguC01q0oXiQDZWEVJC
         YbT1H7OzVKvosmbKxBCE0fT+Hp/o9yR3knM/732f98/53PABc+U9758fzFwXOec8z8nrr78OXDJxV8K9
         4SPh0fCZ8IXwfHgx/Di8crD+98rWv1sfsz52/Zr1a9fnuJJ9DeBiS0Pg4om7PTwSng0vhxV2WJ9rfc71
@@ -249,7 +249,7 @@
   <data name="btnExluir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADCsSURBVHhe7d15
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADCsSURBVHhe7d15
         3K7luPDxVWmeiJQmslWEHTKlFDuETCEZS4iikikSmYcikiEJIRHSoAwZC2XOmNAuDShpkNJc7/s72M/e
         t+VYq2e47+ccrt/v8/n+837e93Ws1XNez7Xu67rPc4GZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZ
         mZmZmZmZmZmZmZmZmZmZmZmZmZmZVdcS2AR74kj8DH/GTf/jQpyOIxD/dzaAmZmZNdi62BnxCz9+2f+/
@@ -460,22 +460,25 @@
         zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMbE4tWPD/AUlhZBCSSNgfAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="cbCliente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="tbclienteBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>180, 54</value>
   </metadata>
   <metadata name="tbclienteBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>180, 54</value>
   </metadata>
-  <metadata name="tbclienteBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>531, 17</value>
-  </metadata>
-  <metadata name="tbclienteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>180, 17</value>
+  <metadata name="db_FarmtechDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
   </metadata>
   <metadata name="db_FarmtechDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 54</value>
   </metadata>
   <metadata name="tb_clienteTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>363, 54</value>
+  </metadata>
+  <metadata name="tbclienteBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>531, 17</value>
+  </metadata>
+  <metadata name="tbclienteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>180, 17</value>
   </metadata>
 </root>

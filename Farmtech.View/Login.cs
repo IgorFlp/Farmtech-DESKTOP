@@ -27,16 +27,17 @@ namespace Farmtech.View
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           LoginEnt usuario = new LoginEnt();
+           UsuarioEnt usuario = new UsuarioEnt();
            usuario.Login = inputUser.Text;
            usuario.Senha = inputSenha.Text;
-           string res = LoginModel.logar(usuario); 
-           attLogin(res);
+           UsuarioEnt response = new UsuarioEnt();
+           response = LoginModel.logar(usuario); 
+           attLogin(response);
         }
 
-        private void attLogin(string res)
+        private void attLogin(UsuarioEnt response)
         {
-            if (res != "Correto")
+            if (response == null)
             {
                 lblAvisoGs.ForeColor = Color.Red;
                 lblAvisoGs.Text = "Usuario ou senha incorreto";
@@ -46,8 +47,11 @@ namespace Farmtech.View
                 {
                     lblAvisoGs.ForeColor = Color.Black;
                     lblAvisoGs.Text = "Efetuando login...";
-                    //Thread.Sleep(1000);
-                    this.Hide();
+                //Thread.Sleep(1000);
+                Farmtech_DESKTOP.Properties.Settings.Default.UsuarioNome = response.Nome;
+                Farmtech_DESKTOP.Properties.Settings.Default.UsuarioId = response.Id;
+                Farmtech_DESKTOP.Properties.Settings.Default.Save();
+                this.Hide();
                     //1-Home
                     AbrirForm.abrirForm("Home");
 

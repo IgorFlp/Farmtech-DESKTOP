@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Farmtech.Entidades
 {
-    public class EnderecoEnt
+    public class ClienteEnderecoEnt
     {
         private string clCpf;
         private string rua;

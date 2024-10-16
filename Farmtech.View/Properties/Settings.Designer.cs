@@ -33,5 +33,29 @@ namespace Farmtech_DESKTOP.Properties {
                 return ((string)(this["Db_FarmtechConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UsuarioNome {
+            get {
+                return ((string)(this["UsuarioNome"]));
+            }
+            set {
+                this["UsuarioNome"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UsuarioId {
+            get {
+                return ((int)(this["UsuarioId"]));
+            }
+            set {
+                this["UsuarioId"] = value;
+            }
+        }
     }
 }

@@ -41,18 +41,23 @@ namespace Farmtech_DESKTOP
             this.lblAlerta.AutoEllipsis = true;
             this.lblAlerta.AutoSize = true;
             this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlerta.Location = new System.Drawing.Point(119, 87);
+            this.lblAlerta.Location = new System.Drawing.Point(18, 46);
+            this.lblAlerta.Margin = new System.Windows.Forms.Padding(0);
+            this.lblAlerta.MaximumSize = new System.Drawing.Size(200, 200);
             this.lblAlerta.Name = "lblAlerta";
-            this.lblAlerta.Size = new System.Drawing.Size(42, 16);
+            this.lblAlerta.Size = new System.Drawing.Size(200, 64);
             this.lblAlerta.TabIndex = 0;
-            this.lblAlerta.Text = "Teste";
+            this.lblAlerta.Text = "usadhausdhusahdsahdusahsauhdshadahdushsuahdasudshadusahsaiuhdasiuhsadisudhiouhwoi" +
+    "udqwhojidqhoqfishqodfho";
             this.lblAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Alerta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 192);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(232, 158);
             this.Controls.Add(this.lblAlerta);
             this.Name = "Alerta";
             this.Text = "Alerta";

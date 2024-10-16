@@ -16,41 +16,52 @@ namespace Farmtech.View
         public Inicio()
         {
             InitializeComponent();
-        }
+        }    
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario();
+            usuario.Show();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFornecedores_Click(object sender, EventArgs e)
         {
-
+            Fornecedor fornecedor = new Fornecedor();
+            fornecedor.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnClientes_Click(object sender, EventArgs e)
         {
-           
+            Cliente cliente = new Cliente();
+            cliente.Show();
         }
-        private void groupBox2_Enter(object sender, EventArgs e)
+
+        private void btnProdutos_Click(object sender, EventArgs e)
         {
-
+            Produto produto = new Produto();
+            produto.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnProducao_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void btnRelatorio_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente.Show();
+
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            Vendas vendas = new Vendas();
+            vendas.Show();
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
