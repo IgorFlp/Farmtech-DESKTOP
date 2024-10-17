@@ -32,6 +32,14 @@ namespace Farmtech.Model
             return usuarioEnt;
         }
         
+        public List<UsuarioEnt> BuscarUsuarios()
+        {
+            List<UsuarioEnt> usuarios = new List<UsuarioEnt>();
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            usuarios = usuarioDAO.BuscarUsuarios();
+            return usuarios;
+        }
+
         public string Atualizar(UsuarioEnt usuarioEnt)
         {
             UsuarioDAO usuarioDAO = new UsuarioDAO();

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="EstoqueDAO.cs" />
     <Compile Include="FornecedorDAO.cs" />
+    <Compile Include="ProducaoDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="UsuarioDAO.cs" />
     <Compile Include="ClienteDAO.cs" />

@@ -45,6 +45,7 @@
     <Compile Include="EstoqueEnt.cs" />
     <Compile Include="FornecedorEnderecoEnt .cs" />
     <Compile Include="ClienteEnderecoEnt.cs" />
+    <Compile Include="ProducaoEnt.cs" />
     <Compile Include="ProdutoEnt.cs" />
     <Compile Include="LoginEnt.cs" />
     <Compile Include="ClienteEnt.cs" />

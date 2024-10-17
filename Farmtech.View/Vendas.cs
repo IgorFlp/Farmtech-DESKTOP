@@ -15,6 +15,7 @@ using Farmtech.Entidades;
 using Farmtech.Model;
 using Farmtech_DESKTOP;
 using Newtonsoft.Json;
+using WinFormsApp1;
 
 namespace Farmtech.View
 {
@@ -262,7 +263,14 @@ namespace Farmtech.View
             string produtoRes = vendaModel.CadastrarProdutos(produtos);
             if (vendaEnt.Id > 0 && produtoRes == "Sucesso")
             {
-                MessageBox.Show("Venda cadastrada com sucesso.");
+                DialogResult dr = MessageBox.Show("Venda cadastrada com sucesso.");
+                if (dr == DialogResult.OK)
+                {
+                    this.Hide();
+                    Form novoForm = new Vendas();
+                    novoForm.ShowDialog();
+                    this.Close();
+                }
             }
             else {
                 MessageBox.Show("Erro no cadastro da venda.");

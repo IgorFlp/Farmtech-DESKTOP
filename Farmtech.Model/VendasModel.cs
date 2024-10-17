@@ -41,6 +41,20 @@ namespace Farmtech.Model
             
             
         }
+        public List<VendaEnt> BuscarVendas()
+        {
+            List<VendaEnt> vendas = new List<VendaEnt>();
+            VendasDAO vendasDAO = new VendasDAO();
+            vendas = vendasDAO.BuscarVendas();
+            return vendas;
+        }
+        public List<VendaProdutoEnt> BuscarVendasProdutos()
+        {
+            List<VendaProdutoEnt> vendasProdutos = new List<VendaProdutoEnt>();
+            VendasDAO vendasDAO = new VendasDAO();
+            vendasProdutos = vendasDAO.BuscarVendasProdutos();
+            return vendasProdutos;
+        }
         /*
         public string Criar(VendasEnt vendas)
         {            
@@ -55,14 +69,7 @@ namespace Farmtech.Model
             string res = vendasDAO.Excluir(id);
             return res;
         }
-        public VendasEnt BuscarVendas(int id)
-        {
-            VendasEnt vendasEnt = new VendasEnt();
-
-            VendasDAO vendasDAO = new VendasDAO();
-            vendasEnt = vendasDAO.BuscarVendas(id);
-            return vendasEnt;
-        }
+        
         
         public string Atualizar(VendasEnt vendasEnt)
         {

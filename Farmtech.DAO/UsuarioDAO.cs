@@ -93,7 +93,40 @@ namespace Farmtech.DAO
                     return usuario;
                 }                
             }            
-        }        
+        }
+        public List<UsuarioEnt> BuscarUsuarios()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_usuario";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<UsuarioEnt> usuarios = new List<UsuarioEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            while(reader.Read())
+                            {
+                                UsuarioEnt usuario = new UsuarioEnt();  
+                                usuario.Id = Convert.ToInt32(reader["id"]);
+                                usuario.Nome = reader["nome"].ToString();
+                                usuario.Login = reader["login"].ToString();
+                                usuario.Senha = reader["senha"].ToString();
+                                usuario.Cargo = reader["cargo"].ToString();
+                                usuarios.Add(usuario);
+                            };
+
+                        }
+                    }
+                    return usuarios;
+                }
+            }
+        }
         public string Atualizar(UsuarioEnt usuario)
         {
             using (SqlConnection sqlconn = new SqlConnection(configBanco.connectionString))

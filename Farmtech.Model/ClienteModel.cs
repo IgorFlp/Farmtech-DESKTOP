@@ -125,6 +125,13 @@ namespace Farmtech.Model
             clienteEnt = clienteDAO.BuscarCliente(cpf);
             return clienteEnt;
         }
+        public List<ClienteEnt> BuscarClientes()
+        {
+            List<ClienteEnt> clientes = new List<ClienteEnt>();
+            ClienteDAO clienteDAO = new ClienteDAO();
+            clientes = clienteDAO.BuscarClientes();
+            return clientes;
+        }
         public ClienteEnderecoEnt BuscarEndereco(String cpf)
         {
             ClienteDAO  clienteDAO = new ClienteDAO();

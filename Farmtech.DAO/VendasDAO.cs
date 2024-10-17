@@ -118,5 +118,73 @@ namespace Farmtech.DAO
                                
             }
         }
+        public List<VendaEnt> BuscarVendas()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_venda";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<VendaEnt> vendas = new List<VendaEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            while (reader.Read())
+                            {
+                                VendaEnt venda = new VendaEnt();
+                                venda.Id = Convert.ToInt32(reader["id"]);
+                                venda.Cl_cpf = reader["cl_cpf"].ToString();
+                                venda.Subtotal = Convert.ToDouble(reader["subtotal"]);
+                                venda.Frete = Convert.ToDouble(reader["frete"]);
+                                venda.Desconto = Convert.ToDouble(reader["desconto"]);
+                                venda.Total = Convert.ToDouble(reader["total"]);
+                                venda.Cupom = reader["cupom"].ToString();
+                                venda.MtdPagto = reader["mtdPagto"].ToString();
+                                venda.Entrega = reader["entrega"].ToString();
+                                venda.DtVenda = Convert.ToDateTime(reader["dtVenda"]);
+                                venda.Usr_id = Convert.ToInt32(reader["usr_id"]);
+                                vendas.Add(venda);
+                            };
+                        }
+                    }
+                    return vendas;
+                }
+            }
+        }
+        public List<VendaProdutoEnt> BuscarVendasProdutos()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_ven_produtos";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<VendaProdutoEnt> vendasProdutos = new List<VendaProdutoEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            while (reader.Read())
+                            {
+                                VendaProdutoEnt vendaProdutos = new VendaProdutoEnt();                                
+                                vendaProdutos.Ven_id = Convert.ToInt32(reader["ven_id"]);
+                                vendaProdutos.Pdt_id = Convert.ToInt32(reader["pdt_id"]);                                
+                                vendaProdutos.Quant = Convert.ToDouble(reader["quant"]);                                
+                                vendasProdutos.Add(vendaProdutos);
+                            };
+                        }
+                    }
+                    return vendasProdutos;
+                }
+            }
+        }
     }
 }

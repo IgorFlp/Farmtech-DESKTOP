@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace Farmtech.View
 {
@@ -45,12 +46,14 @@ namespace Farmtech.View
 
         private void btnProducao_Click(object sender, EventArgs e)
         {
-            
+            Producao producao = new Producao();
+            producao.Show();
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-
+            Relatorios relatorios = new Relatorios();
+            relatorios.Show();
         }
 
         private void btnVender_Click(object sender, EventArgs e)

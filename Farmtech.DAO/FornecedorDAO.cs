@@ -134,6 +134,38 @@ namespace Farmtech.DAO
                 }                
             }            
         }
+        public List<FornecedorEnt> BuscarFornecedores()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_fornecedor";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<FornecedorEnt> fornecedores = new List<FornecedorEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            while (reader.Read())
+                            {
+                                FornecedorEnt fornecedor = new FornecedorEnt();
+                                fornecedor.Cnpj = reader["cnpj"].ToString();
+                                fornecedor.NomeFantasia = reader["nomeFantasia"].ToString();
+                                fornecedor.RazaoSocial = reader["razaoSocial"].ToString();
+                                fornecedor.Telefone = reader["telefone"].ToString();
+                                fornecedor.Email = reader["email"].ToString();
+                                fornecedores.Add(fornecedor);
+                            };
+                        }
+                    }
+                    return fornecedores;
+                }
+            }
+        }
         public FornecedorEnderecoEnt BuscarEndereco(String cnpj)
         {
             using (SqlConnection conn = new SqlConnection(configBanco.connectionString))

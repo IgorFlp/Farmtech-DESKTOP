@@ -140,6 +140,39 @@ namespace Farmtech.DAO
                 }                
             }            
         }
+        public List<ClienteEnt> BuscarClientes()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_cliente";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<ClienteEnt> clientes = new List<ClienteEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            while (reader.Read())
+                            {
+                                ClienteEnt cliente = new ClienteEnt();
+                                cliente.Cpf = reader["cpf"].ToString();
+                                cliente.Nome = reader["nome"].ToString();
+                                cliente.DataNasc = Convert.ToDateTime(reader["dataNasc"]);
+                                cliente.Genero = Convert.ToChar(reader["genero"]);
+                                cliente.Telefone = reader["telefone"].ToString();
+                                cliente.Email = reader["email"].ToString();
+                                clientes.Add(cliente);
+                            };
+                        }
+                    }
+                    return clientes;
+                }
+            }
+        }
         public ClienteEnderecoEnt BuscarEndereco(String cpf)
         {
             using (SqlConnection conn = new SqlConnection(configBanco.connectionString))

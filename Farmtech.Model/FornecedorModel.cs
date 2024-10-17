@@ -125,6 +125,13 @@ namespace Farmtech.Model
             fornecedorEnt = fornecedorDAO.BuscarFornecedor(cnpj);
             return fornecedorEnt;
         }
+        public List<FornecedorEnt> BuscarFornecedores()
+        {
+            List<FornecedorEnt> fornecedores = new List<FornecedorEnt>();
+            FornecedorDAO fornecedorDAO = new FornecedorDAO();
+            fornecedores = fornecedorDAO.BuscarFornecedores();
+            return fornecedores;
+        }
         public FornecedorEnderecoEnt BuscarEndereco(String cnpj)
         {
             FornecedorDAO fornecedorDAO = new FornecedorDAO();
