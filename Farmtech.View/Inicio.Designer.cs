@@ -81,7 +81,8 @@ namespace Farmtech.View
             // 
             // btnProducao
             // 
-            this.btnProducao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProducao.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Producao1;
+            this.btnProducao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProducao.Location = new System.Drawing.Point(84, 16);
             this.btnProducao.Name = "btnProducao";
             this.btnProducao.Size = new System.Drawing.Size(33, 32);
@@ -193,7 +194,7 @@ namespace Farmtech.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IMWG - FarmTech";
+            this.Text = "FarmTech";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.panel1.ResumeLayout(false);

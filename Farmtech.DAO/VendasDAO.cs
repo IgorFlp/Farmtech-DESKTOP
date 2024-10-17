@@ -132,8 +132,7 @@ namespace Farmtech.DAO
                     List<VendaEnt> vendas = new List<VendaEnt>();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
-                        {
+                        
                             while (reader.Read())
                             {
                                 VendaEnt venda = new VendaEnt();
@@ -150,7 +149,7 @@ namespace Farmtech.DAO
                                 venda.Usr_id = Convert.ToInt32(reader["usr_id"]);
                                 vendas.Add(venda);
                             };
-                        }
+                        
                     }
                     return vendas;
                 }
@@ -170,8 +169,7 @@ namespace Farmtech.DAO
                     List<VendaProdutoEnt> vendasProdutos = new List<VendaProdutoEnt>();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
-                        {
+                        
                             while (reader.Read())
                             {
                                 VendaProdutoEnt vendaProdutos = new VendaProdutoEnt();                                
@@ -180,7 +178,7 @@ namespace Farmtech.DAO
                                 vendaProdutos.Quant = Convert.ToDouble(reader["quant"]);                                
                                 vendasProdutos.Add(vendaProdutos);
                             };
-                        }
+                        
                     }
                     return vendasProdutos;
                 }

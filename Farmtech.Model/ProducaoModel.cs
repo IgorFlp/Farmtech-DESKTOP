@@ -29,5 +29,17 @@ namespace Farmtech.Model
                 return "Erro";
             }
         }
+        public static List<ProducaoEnt> BuscarProducoes()
+        {
+            List<ProducaoEnt> producoes = new List<ProducaoEnt>();            
+            producoes = ProducaoDAO.BuscarProducoes();
+            return producoes;
+        }
+        public static List<ProducaoProdutoEnt> BuscarProducoesProdutos()
+        {
+            List<ProducaoProdutoEnt> produtos = new List<ProducaoProdutoEnt>();
+            produtos = ProducaoDAO.BuscarProducoesProdutos();
+            return produtos;
+        }
     }
 }

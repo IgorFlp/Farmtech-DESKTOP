@@ -281,8 +281,10 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Usuario";
-            this.Text = "Farmtech - Cadastro Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro Usuarios";
             this.Load += new System.EventHandler(this.Usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).EndInit();

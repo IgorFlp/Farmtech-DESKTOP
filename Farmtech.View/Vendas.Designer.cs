@@ -578,7 +578,7 @@ namespace Farmtech.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Farmtech - Vendas";
+            this.Text = "Vender";
             this.Load += new System.EventHandler(this.Vendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();

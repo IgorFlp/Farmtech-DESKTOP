@@ -124,6 +124,7 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.bntLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

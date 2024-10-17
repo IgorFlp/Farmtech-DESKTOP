@@ -108,8 +108,7 @@ namespace Farmtech.DAO
                     List<UsuarioEnt> usuarios = new List<UsuarioEnt>();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
-                        {
+                       
                             while(reader.Read())
                             {
                                 UsuarioEnt usuario = new UsuarioEnt();  
@@ -120,8 +119,7 @@ namespace Farmtech.DAO
                                 usuario.Cargo = reader["cargo"].ToString();
                                 usuarios.Add(usuario);
                             };
-
-                        }
+                        
                     }
                     return usuarios;
                 }

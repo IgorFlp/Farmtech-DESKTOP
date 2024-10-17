@@ -55,6 +55,8 @@ namespace WinFormsApp1
             this.unMedidaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -73,13 +75,13 @@ namespace WinFormsApp1
             this.txtQuant = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.cbProduto = new System.Windows.Forms.ComboBox();
-            this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
             this.tbprodutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_produtoTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter();
-            this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_clienteTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_clienteTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaProducao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -88,9 +90,7 @@ namespace WinFormsApp1
             this.groupBox5.SuspendLayout();
             this.gbAddProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -163,6 +163,16 @@ namespace WinFormsApp1
             this.comboBox1.Size = new System.Drawing.Size(235, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "cpf";
+            // 
+            // tbclienteBindingSource
+            // 
+            this.tbclienteBindingSource.DataMember = "Tb_cliente";
+            this.tbclienteBindingSource.DataSource = this.db_FarmtechDataSet;
+            // 
+            // db_FarmtechDataSet
+            // 
+            this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
+            this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -370,11 +380,6 @@ namespace WinFormsApp1
             this.cbProduto.TabIndex = 0;
             this.cbProduto.ValueMember = "id";
             // 
-            // db_FarmtechDataSet
-            // 
-            this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
-            this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tbprodutoBindingSource
             // 
             this.tbprodutoBindingSource.DataMember = "Tb_produto";
@@ -383,11 +388,6 @@ namespace WinFormsApp1
             // tb_produtoTableAdapter
             // 
             this.tb_produtoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbclienteBindingSource
-            // 
-            this.tbclienteBindingSource.DataMember = "Tb_cliente";
-            this.tbclienteBindingSource.DataSource = this.db_FarmtechDataSet;
             // 
             // tb_clienteTableAdapter
             // 
@@ -404,10 +404,12 @@ namespace WinFormsApp1
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Producao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Farmtech - Produção";
+            this.Text = "Produção";
             this.Load += new System.EventHandler(this.Producao_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabelaProducao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -419,9 +421,7 @@ namespace WinFormsApp1
             this.gbAddProd.ResumeLayout(false);
             this.gbAddProd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

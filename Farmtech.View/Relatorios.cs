@@ -1,6 +1,7 @@
 ﻿using Farmtech.Entidades;
 using Farmtech.Model;
 using Farmtech.View;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,18 +23,28 @@ namespace Farmtech_DESKTOP
         }
         List<ClienteEnt> clientes = new List<ClienteEnt>();
         List<ProdutoEnt> produtos = new List<ProdutoEnt>();
+        List<UsuarioEnt> usuarios = new List<UsuarioEnt>();
+        List<EstoqueEnt> estoques = new List<EstoqueEnt>();
+
         
         List<VendaEnt> vendas = new List<VendaEnt>();        
         List<VendaProdutoEnt> vendaProdutos = new List<VendaProdutoEnt>();
 
         List<ProducaoEnt> producoes = new List<ProducaoEnt>();
-        List<ProducaoProdutoEnt> producoesProdutos = new List<ProducaoProdutoEnt>();        
+        List<ProducaoProdutoEnt> producoesProdutos = new List<ProducaoProdutoEnt>();          
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string relatorio = slcRelatorio.Text;
             switch (relatorio)
             {
+                case "Estoque":
+                    RelatorioEstoque();
+                    break;
+                case "Produções":
+                    RelatorioProducao();
+                    break;                
                 case "Vendas":
                     RelatorioVendas();
                     break;
@@ -56,15 +67,24 @@ namespace Farmtech_DESKTOP
             ClienteModel clienteModel = new ClienteModel();
             clientes = clienteModel.BuscarClientes();
 
+            UsuarioModel usuarioModel = new UsuarioModel();
+            usuarios = usuarioModel.BuscarUsuarios();
+
             ProdutoModel produtoModel = new ProdutoModel();
             produtos = produtoModel.BuscarProdutos();
+
+            producoes = ProducaoModel.BuscarProducoes();
+            producoesProdutos = ProducaoModel.BuscarProducoesProdutos();
 
             VendasModel vendasModel = new VendasModel();
             vendas = vendasModel.BuscarVendas();
             vendaProdutos = vendasModel.BuscarVendasProdutos();
+
+            estoques = ProdutoModel.BuscarEstoques();
         }
         public void RelatorioProdutos()
         {
+            tabelaRelatorio.DataSource = null;
             // Limpa todas as colunas e dados atuais
             tabelaRelatorio.Columns.Clear();
             tabelaRelatorio.Rows.Clear();
@@ -111,7 +131,7 @@ namespace Farmtech_DESKTOP
         }
         public void RelatorioUsuarios()
         {
-           
+            tabelaRelatorio.DataSource = null;
             tabelaRelatorio.Columns.Clear();
             tabelaRelatorio.Rows.Clear();
 
@@ -160,7 +180,7 @@ namespace Farmtech_DESKTOP
         }
         public void RelatorioFornecedores()
         {
-
+            tabelaRelatorio.DataSource = null;
             tabelaRelatorio.Columns.Clear();
             tabelaRelatorio.Rows.Clear();
 
@@ -208,7 +228,7 @@ namespace Farmtech_DESKTOP
         }
         public void RelatorioClientes()
         {
-
+            tabelaRelatorio.DataSource = null;
             tabelaRelatorio.Columns.Clear();
             tabelaRelatorio.Rows.Clear();
 
@@ -261,8 +281,8 @@ namespace Farmtech_DESKTOP
             tabelaRelatorio.Refresh();
         }
         public void RelatorioVendas()
-        {            
-
+        {
+            tabelaRelatorio.DataSource = null;
             tabelaRelatorio.Columns.Clear();
             tabelaRelatorio.Rows.Clear();
             tabelaRelatorio.AutoGenerateColumns = false;
@@ -280,11 +300,13 @@ namespace Farmtech_DESKTOP
             DataGridViewColumn col3 = new DataGridViewTextBoxColumn();
             col3.HeaderText = "Produtos";
             col3.DataPropertyName = "produtos"; //inserir com metodo externo
+            col3.DefaultCellStyle.WrapMode = DataGridViewTriState.True; // Coluna de produtos            
             col3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewColumn col4 = new DataGridViewTextBoxColumn();
             col4.HeaderText = "Quant";
             col4.DataPropertyName = "Quant";  //inserir com metodo externo
+            col4.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             col4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewColumn col5 = new DataGridViewTextBoxColumn();
@@ -337,8 +359,8 @@ namespace Farmtech_DESKTOP
             col12.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewColumn col13 = new DataGridViewTextBoxColumn();
-            col13.DataPropertyName = "usr_id";            
-            col13.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            col13.DataPropertyName = "usuarioNome";            
+            col13.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             col13.HeaderText = "Usuario";
 
             DataGridViewColumn col14 = new DataGridViewTextBoxColumn();
@@ -346,6 +368,10 @@ namespace Farmtech_DESKTOP
             col14.DataPropertyName = "id";            
             col14.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
+            if (tabelaRelatorio.Columns.Contains("usr_id"))
+            {
+                tabelaRelatorio.Columns.Remove("usr_id");
+            }
 
             // Adiciona as colunas na DataGridView
             tabelaRelatorio.Columns.Add(col1);
@@ -365,10 +391,231 @@ namespace Farmtech_DESKTOP
 
             tabelaRelatorio.DataSource = vendas;
 
+            //tabelaRelatorio.Refresh();
+            PreencherRelatorioVendas();
+        }
+        private void PreencherRelatorioVendas()
+        {            
+             
+            for(int i = 0; i < tabelaRelatorio.Rows.Count;i++)
+            {
+                //nome
+                DataGridViewRow row = (DataGridViewRow) tabelaRelatorio.Rows[i].Clone();
+                string cpf = tabelaRelatorio.Rows[i].Cells[0].Value.ToString();
+                //Console.WriteLine("Cpf: "+cpf);
+                //Console.WriteLine(JsonConvert.SerializeObject(clientes));
+                ClienteEnt clienteEncontrado = clientes.FirstOrDefault(cliente => cliente.Cpf == cpf);
+                Console.WriteLine(JsonConvert.SerializeObject(clienteEncontrado));
+                tabelaRelatorio.Rows[i].Cells[1].Value = clienteEncontrado.Nome.ToString();
+                
+                //Produtos nomes
+                string produtosString = "";
+                foreach (VendaProdutoEnt produto in vendaProdutos)
+                {
+                    if (Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[13].Value) == produto.Ven_id)
+                    {
+                        int id = produto.Pdt_id;
+                        ProdutoEnt produtoEncontrado = produtos.FirstOrDefault(p => p.Id == id);                    
+                        produtosString += $"{produtoEncontrado.Nome}{Environment.NewLine}";
+                    }
+                    
+                }
+                tabelaRelatorio.Rows[i].Cells[2].Value = produtosString;
+                
+                //Quantidades
+                string quantsString = "";
+                foreach (VendaProdutoEnt produto in vendaProdutos)
+                {
+                     quantsString += $"{produto.Quant}{Environment.NewLine}";
+                }
+                tabelaRelatorio.Rows[i].Cells[3].Value = produtosString;
 
+                //Usuario nome                
+                int vendaId = Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[13].Value);
+                VendaEnt venda = vendas.FirstOrDefault(v => v.Id == vendaId);
+                int idUsr = venda.Usr_id;
+                Console.WriteLine("User id"+ idUsr);
+                UsuarioEnt usuarioEncontrado = usuarios.FirstOrDefault(u => u.Id == idUsr);
+                Console.WriteLine(JsonConvert.SerializeObject(usuarioEncontrado));
+                tabelaRelatorio.Rows[i].Cells[12].Value = usuarioEncontrado.Nome;
+
+            }
+            tabelaRelatorio.AutoResizeRows();
             tabelaRelatorio.Refresh();
         }
 
+        public void RelatorioProducao()
+        {
+            tabelaRelatorio.DataSource = null;
+            tabelaRelatorio.Columns.Clear();
+            tabelaRelatorio.Rows.Clear();
+            tabelaRelatorio.AutoGenerateColumns = false;
+
+            DataGridViewColumn col1 = new DataGridViewTextBoxColumn();
+            col1.HeaderText = "ID Producão";
+            col1.DataPropertyName = "id";
+            col1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;            
+
+            DataGridViewColumn col2 = new DataGridViewTextBoxColumn();
+            col2.HeaderText = "Produtos";
+            col2.DataPropertyName = "produtos"; //inserir com metodo externo
+            col2.DefaultCellStyle.WrapMode = DataGridViewTriState.True;             
+            col2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            DataGridViewColumn col3 = new DataGridViewTextBoxColumn();
+            col3.HeaderText = "Quant";
+            col3.DataPropertyName = "Quant";  //inserir com metodo externo
+            col3.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            col3.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+            DataGridViewColumn col4 = new DataGridViewTextBoxColumn();
+            col4.HeaderText = "Medida";
+            col4.DataPropertyName = "unMedida";
+            col4.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            col4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            DataGridViewColumn col5= new DataGridViewTextBoxColumn();
+            col5.DataPropertyName = "dataProd";
+            col5.DefaultCellStyle.Format = "dd/MM/yyyy";
+            col5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;            
+            col5.HeaderText = "Data";
+
+            
+
+            // Adiciona as colunas na DataGridView
+            tabelaRelatorio.Columns.Add(col1);
+            tabelaRelatorio.Columns.Add(col2);
+            tabelaRelatorio.Columns.Add(col3);
+            tabelaRelatorio.Columns.Add(col4);            
+            tabelaRelatorio.Columns.Add(col5);            
+
+            tabelaRelatorio.DataSource = producoes;
+
+            //tabelaRelatorio.Refresh();
+            PreencherRelatorioProducoes();
+        }
+
+        private void PreencherRelatorioProducoes()
+        {
+
+            for (int i = 0; i < tabelaRelatorio.Rows.Count; i++)
+            {
+                //nome
+                DataGridViewRow row = (DataGridViewRow)tabelaRelatorio.Rows[i].Clone();                
+
+                //Produtos nomes
+                string produtosString = "";
+                foreach (ProducaoProdutoEnt produto in producoesProdutos)
+                {
+                    if (Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[0].Value) == produto.Pdc_id)
+                    {
+                        int id = produto.Pdt_id;
+                        ProdutoEnt produtoEncontrado = produtos.FirstOrDefault(p => p.Id == id);
+                        produtosString += $"{produtoEncontrado.Nome}{Environment.NewLine}";
+                    }
+
+                }
+                tabelaRelatorio.Rows[i].Cells[1].Value = produtosString;
+
+                //Quantidades
+                string quantsString = "";
+                foreach (ProducaoProdutoEnt produto in producoesProdutos)
+                {
+                    if (Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[0].Value) == produto.Pdc_id)
+                    {
+                        quantsString += $"{produto.Quant}{Environment.NewLine}";
+                    }
+                }
+                tabelaRelatorio.Rows[i].Cells[2].Value = quantsString;
+
+                string unMedidaString = "";
+                foreach (ProducaoProdutoEnt produto in producoesProdutos)
+                {
+                    if (Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[0].Value) == produto.Pdc_id)
+                    {
+                        int id = produto.Pdt_id;
+                        ProdutoEnt produtoEncontrado = produtos.FirstOrDefault(p => p.Id == id);
+                        unMedidaString += $"{produtoEncontrado.UnMedida}{Environment.NewLine}";
+                    }
+
+                }
+                tabelaRelatorio.Rows[i].Cells[3].Value = unMedidaString;
+                
+            }
+            tabelaRelatorio.AutoResizeRows();
+            tabelaRelatorio.Refresh();
+        }
+
+        public void RelatorioEstoque()
+        {
+            tabelaRelatorio.DataSource = null;
+            tabelaRelatorio.Columns.Clear();
+            tabelaRelatorio.Rows.Clear();
+            tabelaRelatorio.AutoGenerateColumns = false;
+
+            DataGridViewColumn col1 = new DataGridViewTextBoxColumn();
+            col1.HeaderText = "ID";
+            col1.DataPropertyName = "pdt_id";
+            col1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            DataGridViewColumn col2 = new DataGridViewTextBoxColumn();
+            col2.HeaderText = "Produto";
+            col2.DataPropertyName = "produto"; //inserir com metodo externo            
+            col2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            DataGridViewColumn col3 = new DataGridViewTextBoxColumn();
+            col3.HeaderText = "Quant";
+            col3.DataPropertyName = "quant";  //inserir com metodo externo            
+            col3.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+            DataGridViewColumn col4 = new DataGridViewTextBoxColumn();
+            col4.HeaderText = "Medida";
+            col4.DataPropertyName = "unMedida";
+            col4.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            col4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;            
+
+
+
+            // Adiciona as colunas na DataGridView
+            tabelaRelatorio.Columns.Add(col1);
+            tabelaRelatorio.Columns.Add(col2);
+            tabelaRelatorio.Columns.Add(col3);
+            tabelaRelatorio.Columns.Add(col4);
+            
+
+            tabelaRelatorio.DataSource = estoques;
+
+            //tabelaRelatorio.Refresh();
+            PreencherRelatorioEstoques();
+        }
+        private void PreencherRelatorioEstoques()
+        {
+
+            for (int i = 0; i < tabelaRelatorio.Rows.Count; i++)
+            {
+                //nome
+                DataGridViewRow row = (DataGridViewRow)tabelaRelatorio.Rows[i].Clone();
+
+                //Produtos nomes
+                string produtosString = "";               
+                
+                int id = Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[0].Value);
+                ProdutoEnt produtoEncontrado = produtos.FirstOrDefault(p => p.Id == id);
+                produtosString = produtoEncontrado.Nome;
+                
+                tabelaRelatorio.Rows[i].Cells[1].Value = produtosString; 
+
+                string unMedidaString = "";                
+                //int id = produto.Pdt_id;
+                //ProdutoEnt produtoEncontrado = produtos.FirstOrDefault(p => p.Id == id);
+                unMedidaString = produtoEncontrado.UnMedida;
+                    
+                tabelaRelatorio.Rows[i].Cells[3].Value = unMedidaString;
+                
+            }
+            tabelaRelatorio.AutoResizeRows();
+            tabelaRelatorio.Refresh();
+        }
         private void Relatorios_Load(object sender, EventArgs e)
         {
             CarregarListas();

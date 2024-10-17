@@ -72,10 +72,11 @@ namespace Farmtech_DESKTOP
 
                fornecedorEnt = fornecedorModel.BuscarFornecedor(fornecedorCnpj);
                enderecoEnt = fornecedorModel.BuscarEndereco(fornecedorCnpj);
-               //string json = JsonConvert.SerializeObject(fornecedorEnt);
-               //string json2 = JsonConvert.SerializeObject(enderecoEnt);
-               //MessageBox.Show("Fornecedor: "+json+"Endereco: "+json2);
+               string json = JsonConvert.SerializeObject(fornecedorEnt);
+               string json2 = JsonConvert.SerializeObject(enderecoEnt);
+               Console.WriteLine("Fornecedor: "+json+"Endereco: "+json2);
                FornecedorAlterar fornecedorAlterar = new FornecedorAlterar(fornecedorEnt,enderecoEnt);
+
                fornecedorAlterar.Show();
             }
             else

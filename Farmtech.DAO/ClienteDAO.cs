@@ -154,8 +154,7 @@ namespace Farmtech.DAO
                     List<ClienteEnt> clientes = new List<ClienteEnt>();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
-                        {
+                        
                             while (reader.Read())
                             {
                                 ClienteEnt cliente = new ClienteEnt();
@@ -167,7 +166,7 @@ namespace Farmtech.DAO
                                 cliente.Email = reader["email"].ToString();
                                 clientes.Add(cliente);
                             };
-                        }
+                        
                     }
                     return clientes;
                 }

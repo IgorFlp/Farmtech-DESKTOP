@@ -76,5 +76,60 @@ namespace Farmtech.DAO
 
             }
         }
+        public static List<ProducaoEnt> BuscarProducoes()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_producao";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<ProducaoEnt> producoes = new List<ProducaoEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {                        
+                            while (reader.Read())
+                            {
+                                ProducaoEnt producao = new ProducaoEnt();
+                                producao.Id = Convert.ToInt32(reader["id"]);                                
+                                producao.DataProd = Convert.ToDateTime(reader["dataProd"]);                                
+                                producoes.Add(producao);
+                            };                       
+                    }
+                    return producoes;
+                }
+            }
+        }
+        public static List<ProducaoProdutoEnt> BuscarProducoesProdutos()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_producao_produtos";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<ProducaoProdutoEnt> producoesProdutos = new List<ProducaoProdutoEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        
+                            while (reader.Read())
+                            {
+                                ProducaoProdutoEnt producaoProdutos = new ProducaoProdutoEnt();
+                                producaoProdutos.Pdc_id = Convert.ToInt32(reader["pdc_id"]);
+                                producaoProdutos.Pdt_id = Convert.ToInt32(reader["pdt_id"]);
+                                producaoProdutos.Quant = Convert.ToDouble(reader["quant"]);
+                                producoesProdutos.Add(producaoProdutos);
+                            };
+                        
+                    }
+                    return producoesProdutos;
+                }
+            }
+        }
     }
 }

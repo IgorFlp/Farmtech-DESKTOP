@@ -36,24 +36,24 @@
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.cbUnidade = new System.Windows.Forms.ComboBox();
             this.dataGridProdutos = new System.Windows.Forms.DataGridView();
-            this.tbusuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbprodutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
+            this.tbusuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_usuarioTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_usuarioTableAdapter();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
-            this.tbprodutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_produtoTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdutos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -130,15 +130,52 @@
             this.dataGridProdutos.TabIndex = 13;
             this.dataGridProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // tbusuarioBindingSource
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.tbusuarioBindingSource.DataMember = "Tb_usuario";
-            this.tbusuarioBindingSource.DataSource = this.db_FarmtechDataSet;
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unMedida
+            // 
+            this.unMedida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unMedida.DataPropertyName = "unMedida";
+            this.unMedida.HeaderText = "Unidade";
+            this.unMedida.Name = "unMedida";
+            this.unMedida.ReadOnly = true;
+            // 
+            // precoUn
+            // 
+            this.precoUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.precoUn.DataPropertyName = "precoUn";
+            this.precoUn.HeaderText = "Preco Unitario";
+            this.precoUn.Name = "precoUn";
+            this.precoUn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tbprodutoBindingSource
+            // 
+            this.tbprodutoBindingSource.DataMember = "Tb_produto";
+            this.tbprodutoBindingSource.DataSource = this.db_FarmtechDataSet;
             // 
             // db_FarmtechDataSet
             // 
             this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
             this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbusuarioBindingSource
+            // 
+            this.tbusuarioBindingSource.DataMember = "Tb_usuario";
+            this.tbusuarioBindingSource.DataSource = this.db_FarmtechDataSet;
             // 
             // tb_usuarioTableAdapter
             // 
@@ -199,46 +236,9 @@
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
-            // tbprodutoBindingSource
-            // 
-            this.tbprodutoBindingSource.DataMember = "Tb_produto";
-            this.tbprodutoBindingSource.DataSource = this.db_FarmtechDataSet;
-            // 
             // tb_produtoTableAdapter
             // 
             this.tb_produtoTableAdapter.ClearBeforeFill = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unMedida
-            // 
-            this.unMedida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.unMedida.DataPropertyName = "unMedida";
-            this.unMedida.HeaderText = "Unidade";
-            this.unMedida.Name = "unMedida";
-            this.unMedida.ReadOnly = true;
-            // 
-            // precoUn
-            // 
-            this.precoUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.precoUn.DataPropertyName = "precoUn";
-            this.precoUn.HeaderText = "Preco Unitario";
-            this.precoUn.Name = "precoUn";
-            this.precoUn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Produto
             // 
@@ -257,13 +257,15 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Produto";
-            this.Text = "Farmtech - Cadastro de Produtos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.Produto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdutos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

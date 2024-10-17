@@ -39,6 +39,12 @@ namespace Farmtech.Model
             produtoEnt = produtoDAO.BuscarProdutos();
             return produtoEnt;
         }
+        public static List<EstoqueEnt> BuscarEstoques()
+        {
+            List<EstoqueEnt> estoques = new List<EstoqueEnt>();
+            estoques = EstoqueDAO.BuscarEstoques();
+            return estoques;
+        }
 
         public string Atualizar(ProdutoEnt produtoEnt)
         {

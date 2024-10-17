@@ -120,5 +120,31 @@ namespace Farmtech.DAO
                 return "Sucesso";
             }
         }
+        public static List<EstoqueEnt> BuscarEstoques()
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "SELECT * FROM Tb_estoque";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<EstoqueEnt> estoques = new List<EstoqueEnt>();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EstoqueEnt estoque = new EstoqueEnt();
+                            estoque.Pdt_id = Convert.ToInt32(reader["pdt_id"]);
+                            estoque.Quant = Convert.ToDouble(reader["quant"]);
+                            estoques.Add(estoque);
+                        };
+                    }
+                    return estoques;
+                }
+            }
+        }
     }
 }

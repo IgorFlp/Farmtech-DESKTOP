@@ -33,15 +33,15 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnExluir = new System.Windows.Forms.Button();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
-            this.tbclienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
-            this.tb_clienteTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_clienteTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbclienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
+            this.tb_clienteTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_clienteTableAdapter();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.tbclienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -94,20 +94,6 @@
             this.dataGridClientes.Size = new System.Drawing.Size(708, 300);
             this.dataGridClientes.TabIndex = 2;
             // 
-            // tbclienteBindingSource2
-            // 
-            this.tbclienteBindingSource2.DataMember = "Tb_cliente";
-            this.tbclienteBindingSource2.DataSource = this.db_FarmtechDataSet;
-            // 
-            // db_FarmtechDataSet
-            // 
-            this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
-            this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tb_clienteTableAdapter
-            // 
-            this.tb_clienteTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -156,6 +142,20 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // tbclienteBindingSource2
+            // 
+            this.tbclienteBindingSource2.DataMember = "Tb_cliente";
+            this.tbclienteBindingSource2.DataSource = this.db_FarmtechDataSet;
+            // 
+            // db_FarmtechDataSet
+            // 
+            this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
+            this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_clienteTableAdapter
+            // 
+            this.tb_clienteTableAdapter.ClearBeforeFill = true;
+            // 
             // btnAlterar
             // 
             this.btnAlterar.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Alterar;
@@ -184,7 +184,9 @@
             this.Controls.Add(this.dataGridClientes);
             this.Controls.Add(this.btnExluir);
             this.Controls.Add(this.btnIncluir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();

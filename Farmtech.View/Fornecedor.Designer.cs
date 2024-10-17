@@ -33,25 +33,25 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnExluir = new System.Windows.Forms.Button();
             this.dataGridFornecedores = new System.Windows.Forms.DataGridView();
-            this.tbfornecedorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
-            this.tb_fornecedorTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_fornecedorTableAdapter();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.tbfornecedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tbfornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaoSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeFantasiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbfornecedorBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
+            this.tbfornecedorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_fornecedorTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_fornecedorTableAdapter();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.tbfornecedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbfornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFornecedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIncluir
@@ -94,39 +94,6 @@
             this.dataGridFornecedores.ReadOnly = true;
             this.dataGridFornecedores.Size = new System.Drawing.Size(708, 300);
             this.dataGridFornecedores.TabIndex = 2;
-            // 
-            // tbfornecedorBindingSource2
-            // 
-            this.tbfornecedorBindingSource2.DataMember = "Tb_fornecedor";
-            this.tbfornecedorBindingSource2.DataSource = this.db_FarmtechDataSet;
-            // 
-            // db_FarmtechDataSet
-            // 
-            this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
-            this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tb_fornecedorTableAdapter
-            // 
-            this.tb_fornecedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Alterar;
-            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAlterar.Location = new System.Drawing.Point(101, 13);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(39, 35);
-            this.btnAlterar.TabIndex = 3;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // tbfornecedorBindingSource1
-            // 
-            this.tbfornecedorBindingSource1.DataMember = "Tb_fornecedor";
-            // 
-            // tbfornecedorBindingSource
-            // 
-            this.tbfornecedorBindingSource.DataMember = "Tb_fornecedor";
             // 
             // cnpjDataGridViewTextBoxColumn
             // 
@@ -173,6 +140,39 @@
             this.tbfornecedorBindingSource3.DataMember = "Tb_fornecedor";
             this.tbfornecedorBindingSource3.DataSource = this.db_FarmtechDataSet;
             // 
+            // db_FarmtechDataSet
+            // 
+            this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
+            this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbfornecedorBindingSource2
+            // 
+            this.tbfornecedorBindingSource2.DataMember = "Tb_fornecedor";
+            this.tbfornecedorBindingSource2.DataSource = this.db_FarmtechDataSet;
+            // 
+            // tb_fornecedorTableAdapter
+            // 
+            this.tb_fornecedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Alterar;
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAlterar.Location = new System.Drawing.Point(101, 13);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(39, 35);
+            this.btnAlterar.TabIndex = 3;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // tbfornecedorBindingSource1
+            // 
+            this.tbfornecedorBindingSource1.DataMember = "Tb_fornecedor";
+            // 
+            // tbfornecedorBindingSource
+            // 
+            this.tbfornecedorBindingSource.DataMember = "Tb_fornecedor";
+            // 
             // btnAtualizar
             // 
             this.btnAtualizar.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Atualizar;
@@ -194,15 +194,18 @@
             this.Controls.Add(this.dataGridFornecedores);
             this.Controls.Add(this.btnExluir);
             this.Controls.Add(this.btnIncluir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Fornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedor";
             this.Load += new System.EventHandler(this.Fornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFornecedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbfornecedorBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
