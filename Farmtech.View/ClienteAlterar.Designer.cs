@@ -136,6 +136,7 @@ namespace Farmtech.View
             this.btnCancela.Size = new System.Drawing.Size(51, 37);
             this.btnCancela.TabIndex = 7;
             this.btnCancela.UseVisualStyleBackColor = false;
+            this.btnCancela.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtEmail
             // 
@@ -323,10 +324,12 @@ namespace Farmtech.View
             this.dataNasc.Size = new System.Drawing.Size(81, 20);
             this.dataNasc.TabIndex = 24;
             this.dataNasc.Value = clienteEnt.DataNasc;
-          
+
             // 
             // Cliente
             // 
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;

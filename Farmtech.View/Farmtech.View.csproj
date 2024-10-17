@@ -55,11 +55,11 @@
     <Compile Include="Alerta.Designer.cs">
       <DependentUpon>Alerta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FornecedorAlterar .cs">
+    <Compile Include="FornecedorAlterar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FornecedorAlterar .Designer.cs">
-      <DependentUpon>FornecedorAlterar .cs</DependentUpon>
+    <Compile Include="FornecedorAlterar.Designer.cs">
+      <DependentUpon>FornecedorAlterar.cs</DependentUpon>
     </Compile>
     <Compile Include="FornecedorNovo.cs">
       <SubType>Form</SubType>
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="Alerta.resx">
       <DependentUpon>Alerta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FornecedorAlterar .resx">
-      <DependentUpon>FornecedorAlterar .cs</DependentUpon>
+    <EmbeddedResource Include="FornecedorAlterar.resx">
+      <DependentUpon>FornecedorAlterar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FornecedorNovo.resx">
       <DependentUpon>FornecedorNovo.cs</DependentUpon>
@@ -255,6 +255,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Producao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lixeira1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

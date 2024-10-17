@@ -127,6 +127,7 @@ namespace Farmtech.View
             this.btnCancela.Size = new System.Drawing.Size(51, 37);
             this.btnCancela.TabIndex = 7;
             this.btnCancela.UseVisualStyleBackColor = false;
+            this.btnCancela.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtEmail
             // 

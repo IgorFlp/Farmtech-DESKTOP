@@ -45,10 +45,11 @@ namespace Farmtech.View
             alerta.LblAlerta.Text = res;
             alerta.Show();
 
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
             this.Close();
-            //Console.WriteLine(JsonConvert.SerializeObject(fornecedor));
-            //Console.WriteLine(JsonConvert.SerializeObject(endereco));
-
         }
     }
 }

@@ -18,40 +18,40 @@ namespace Farmtech.View
     {
         public FornecedorAlterar(FornecedorEnt fornecedor, FornecedorEnderecoEnt endereco)
         {
-            InitializeComponent(fornecedor,endereco);
+            InitializeComponent(fornecedor, endereco);
         }
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             FornecedorEnt fornecedor = new FornecedorEnt();    
             FornecedorEnderecoEnt endereco = new FornecedorEnderecoEnt();
-
             fornecedor.NomeFantasia = txtNomeFantasia.Text;
             fornecedor.RazaoSocial = txtRazaoSocial.Text;
             fornecedor.Cnpj = txtCnpj.Text;
             fornecedor.Telefone = txtTelefone.Text;
-            fornecedor.Email = txtEmail.Text;            
+            fornecedor.Email = txtEmail.Text;
+            
             
             endereco.Frn_cnpj = txtCnpj.Text;
             endereco.Rua = txtRua.Text;
             endereco.Bairro = txtBairro.Text;
             endereco.Cidade = txtCidade.Text;
             endereco.Estado = cbEstado.Text;
-            endereco.Cep = txtCep.Text; 
-
-
-            FornecedorModel fornecedorModel = new FornecedorModel();    
-            string res = fornecedorModel.Atualizar(fornecedor,endereco);
-            Alerta alerta = new Alerta();
-            alerta.LblAlerta.Text = res;
-            alerta.Show();
-
-            this.Close();
+            endereco.Cep = txtCep.Text;
 
             
-            //Console.WriteLine(JsonConvert.SerializeObject(fornecedor));
-            //Console.WriteLine(JsonConvert.SerializeObject(endereco));
-
+            string res = FornecedorModel.Criar(fornecedor,endereco);
+            DialogResult ok = MessageBox.Show(res);
+            if (ok == DialogResult.OK)
+            {
+                this.Hide();
+                this.Close();                
+            } 
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

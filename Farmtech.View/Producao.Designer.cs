@@ -54,21 +54,17 @@ namespace WinFormsApp1
             this.produtoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unMedidaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnIncluir = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.gbAddProd = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -76,6 +72,7 @@ namespace WinFormsApp1
             this.label6 = new System.Windows.Forms.Label();
             this.cbProduto = new System.Windows.Forms.ComboBox();
             this.tbprodutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tb_produtoTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter();
             this.tb_clienteTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_clienteTableAdapter();
             this.groupBox1.SuspendLayout();
@@ -85,12 +82,11 @@ namespace WinFormsApp1
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.gbAddProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -153,17 +149,6 @@ namespace WinFormsApp1
             this.quantColumn.ReadOnly = true;
             this.quantColumn.Width = 105;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.tbclienteBindingSource;
-            this.comboBox1.DisplayMember = "nome";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.ValueMember = "cpf";
-            // 
             // tbclienteBindingSource
             // 
             this.tbclienteBindingSource.DataMember = "Tb_cliente";
@@ -174,42 +159,11 @@ namespace WinFormsApp1
             this.db_FarmtechDataSet.DataSetName = "Db_FarmtechDataSet";
             this.db_FarmtechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Cliente";
-            // 
-            // btnIncluir
-            // 
-            this.btnIncluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncluir.BackgroundImage")));
-            this.btnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnIncluir.Location = new System.Drawing.Point(6, 78);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(48, 30);
-            this.btnIncluir.TabIndex = 3;
-            this.btnIncluir.UseVisualStyleBackColor = true;
-            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExcluir.Location = new System.Drawing.Point(60, 78);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(45, 30);
-            this.btnExcluir.TabIndex = 4;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCancelar.Location = new System.Drawing.Point(74, 62);
+            this.btnCancelar.Location = new System.Drawing.Point(74, 83);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(58, 37);
             this.btnCancelar.TabIndex = 7;
@@ -219,7 +173,7 @@ namespace WinFormsApp1
             // 
             this.btnConfirmar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.BackgroundImage")));
             this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnConfirmar.Location = new System.Drawing.Point(6, 61);
+            this.btnConfirmar.Location = new System.Drawing.Point(6, 84);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(58, 37);
             this.btnConfirmar.TabIndex = 6;
@@ -230,12 +184,12 @@ namespace WinFormsApp1
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.lblUsuario);
-            this.groupBox2.Location = new System.Drawing.Point(6, 13);
+            this.groupBox2.Location = new System.Drawing.Point(6, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(126, 42);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vendedor";
+            this.groupBox2.Text = "Usuario";
             // 
             // pictureBox1
             // 
@@ -259,53 +213,49 @@ namespace WinFormsApp1
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Location = new System.Drawing.Point(0, -18);
+            this.groupBox3.Controls.Add(this.groupBox5);
+            this.groupBox3.Location = new System.Drawing.Point(0, -20);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox3.Size = new System.Drawing.Size(590, 133);
+            this.groupBox3.Size = new System.Drawing.Size(590, 142);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.comboBox1);
-            this.groupBox6.Controls.Add(this.btnExcluir);
-            this.groupBox6.Controls.Add(this.label1);
-            this.groupBox6.Controls.Add(this.btnIncluir);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox6.Location = new System.Drawing.Point(0, 13);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(278, 120);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.btnExcluir);
+            this.groupBox4.Controls.Add(this.btnIncluir);
             this.groupBox4.Controls.Add(this.gbAddProd);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox4.Location = new System.Drawing.Point(278, 13);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox4.Location = new System.Drawing.Point(0, 13);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox4.Size = new System.Drawing.Size(312, 120);
-            this.groupBox4.TabIndex = 8;
+            this.groupBox4.Size = new System.Drawing.Size(220, 129);
+            this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             // 
-            // groupBox5
+            // btnExcluir
             // 
-            this.groupBox5.Controls.Add(this.groupBox2);
-            this.groupBox5.Controls.Add(this.btnConfirmar);
-            this.groupBox5.Controls.Add(this.btnCancelar);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox5.Location = new System.Drawing.Point(177, 13);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(135, 107);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
+            this.btnExcluir.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Lixeira;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.Location = new System.Drawing.Point(181, 84);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(30, 30);
+            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Adicionar;
+            this.btnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIncluir.Location = new System.Drawing.Point(181, 45);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(30, 30);
+            this.btnIncluir.TabIndex = 10;
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // gbAddProd
             // 
@@ -316,9 +266,9 @@ namespace WinFormsApp1
             this.gbAddProd.Controls.Add(this.cbProduto);
             this.gbAddProd.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbAddProd.Enabled = false;
-            this.gbAddProd.Location = new System.Drawing.Point(0, 13);
+            this.gbAddProd.Location = new System.Drawing.Point(3, 16);
             this.gbAddProd.Name = "gbAddProd";
-            this.gbAddProd.Size = new System.Drawing.Size(175, 107);
+            this.gbAddProd.Size = new System.Drawing.Size(171, 110);
             this.gbAddProd.TabIndex = 9;
             this.gbAddProd.TabStop = false;
             // 
@@ -385,6 +335,19 @@ namespace WinFormsApp1
             this.tbprodutoBindingSource.DataMember = "Tb_produto";
             this.tbprodutoBindingSource.DataSource = this.db_FarmtechDataSet;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.groupBox2);
+            this.groupBox5.Controls.Add(this.btnConfirmar);
+            this.groupBox5.Controls.Add(this.btnCancelar);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox5.Location = new System.Drawing.Point(455, 13);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(135, 129);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
             // tb_produtoTableAdapter
             // 
             this.tb_produtoTableAdapter.ClearBeforeFill = true;
@@ -414,14 +377,12 @@ namespace WinFormsApp1
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.gbAddProd.ResumeLayout(false);
             this.gbAddProd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -429,17 +390,12 @@ namespace WinFormsApp1
         #endregion
 
         private GroupBox groupBox1;
-        private ComboBox comboBox1;
-        private Label label1;
-        private Button btnIncluir;
-        private Button btnExcluir;
         private ComboBox comboBox4;
         private GroupBox groupBox2;
         private Label lblUsuario;
         private PictureBox pictureBox1;
         private Button btnCancelar;
         private Button btnConfirmar;
-        private GroupBox groupBox4;
         private GroupBox groupBox3;
         private GroupBox groupBox5;
         private GroupBox gbAddProd;
@@ -447,7 +403,6 @@ namespace WinFormsApp1
         private NumericUpDown txtQuant;
         private Label label6;
         private ComboBox cbProduto;
-        private GroupBox groupBox6;
         private DataGridView tabelaProducao;
         private DataGridViewTextBoxColumn idColumn;
         private DataGridViewTextBoxColumn produtoColumn;
@@ -459,5 +414,8 @@ namespace WinFormsApp1
         private Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter tb_produtoTableAdapter;
         private BindingSource tbclienteBindingSource;
         private Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_clienteTableAdapter tb_clienteTableAdapter;
+        private GroupBox groupBox4;
+        private Button btnIncluir;
+        private Button btnExcluir;
     }
 }

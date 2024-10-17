@@ -62,9 +62,9 @@ namespace Farmtech.View
             // 
             this.txtRazaoSocial.Location = new System.Drawing.Point(22, 36);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Text = fornecedor.RazaoSocial;
             this.txtRazaoSocial.Size = new System.Drawing.Size(250, 20);
             this.txtRazaoSocial.TabIndex = 0;
-            this.txtRazaoSocial.Text = fornecedor.RazaoSocial;
             // 
             // label1
             // 
@@ -80,34 +80,34 @@ namespace Farmtech.View
             this.txtCnpj.Location = new System.Drawing.Point(22, 79);
             this.txtCnpj.MaxLength = 11;
             this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Text = fornecedor.Cnpj;
             this.txtCnpj.Size = new System.Drawing.Size(139, 20);
             this.txtCnpj.TabIndex = 2;
-            this.txtCnpj.Text = fornecedor.Cnpj;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(177, 79);
             this.txtTelefone.MaxLength = 11;
             this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Text = fornecedor.Telefone;
             this.txtTelefone.Size = new System.Drawing.Size(128, 20);
             this.txtTelefone.TabIndex = 3;
-            this.txtTelefone.Text = fornecedor.Telefone;
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(22, 129);
             this.txtRua.Name = "txtRua";
+            this.txtRua.Text = endereco.Rua;
             this.txtRua.Size = new System.Drawing.Size(204, 20);
             this.txtRua.TabIndex = 4;
-            this.txtRua.Text = endereco.Rua;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(238, 129);
             this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Text = endereco.Bairro;
             this.txtBairro.Size = new System.Drawing.Size(67, 20);
             this.txtBairro.TabIndex = 5;
-            this.txtBairro.Text = endereco.Bairro;
             // 
             // btnConfirma
             // 
@@ -133,31 +133,32 @@ namespace Farmtech.View
             this.btnCancela.Size = new System.Drawing.Size(51, 37);
             this.btnCancela.TabIndex = 7;
             this.btnCancela.UseVisualStyleBackColor = false;
+            this.btnCancela.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(339, 79);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Text = fornecedor.Email;
             this.txtEmail.Size = new System.Drawing.Size(202, 20);
             this.txtEmail.TabIndex = 9;
-            this.txtEmail.Text = fornecedor.Email;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(339, 129);
             this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Text = endereco.Cidade;
             this.txtCidade.Size = new System.Drawing.Size(81, 20);
             this.txtCidade.TabIndex = 10;
-            this.txtCidade.Text = endereco.Cidade;
             // 
             // txtCep
             // 
             this.txtCep.Location = new System.Drawing.Point(471, 129);
             this.txtCep.MaxLength = 8;
             this.txtCep.Name = "txtCep";
+            this.txtCep.Text = endereco.Cep;
             this.txtCep.Size = new System.Drawing.Size(70, 20);
             this.txtCep.TabIndex = 11;
-            this.txtCep.Text = endereco.Cep;
             // 
             // cbEstado
             // 
@@ -192,9 +193,9 @@ namespace Farmtech.View
             "TO"});
             this.cbEstado.Location = new System.Drawing.Point(424, 129);
             this.cbEstado.Name = "cbEstado";
+            this.cbEstado.SelectedText = endereco.Estado;
             this.cbEstado.Size = new System.Drawing.Size(42, 21);
             this.cbEstado.TabIndex = 13;
-            this.cbEstado.Text = endereco.Estado;
             // 
             // label2
             // 
@@ -281,9 +282,9 @@ namespace Farmtech.View
             // 
             this.txtNomeFantasia.Location = new System.Drawing.Point(291, 36);
             this.txtNomeFantasia.Name = "txtNomeFantasia";
+            this.txtNomeFantasia.Text = fornecedor.NomeFantasia;
             this.txtNomeFantasia.Size = new System.Drawing.Size(250, 20);
             this.txtNomeFantasia.TabIndex = 24;
-            this.txtNomeFantasia.Text = fornecedor.NomeFantasia;
             // 
             // FornecedorAlterar
             // 
@@ -316,9 +317,11 @@ namespace Farmtech.View
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRazaoSocial);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FornecedorAlterar";
-            this.Text = "Farmtech - Alterar cadadastro de Fornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Fornecedor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

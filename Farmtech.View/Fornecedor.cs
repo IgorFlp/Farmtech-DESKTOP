@@ -76,8 +76,10 @@ namespace Farmtech_DESKTOP
                string json2 = JsonConvert.SerializeObject(enderecoEnt);
                Console.WriteLine("Fornecedor: "+json+"Endereco: "+json2);
                FornecedorAlterar fornecedorAlterar = new FornecedorAlterar(fornecedorEnt,enderecoEnt);
-
+               
                fornecedorAlterar.Show();
+                
+
             }
             else
             {
@@ -92,5 +94,6 @@ namespace Farmtech_DESKTOP
             novoForm.ShowDialog();
             this.Close();
         }
+        
     }
 }

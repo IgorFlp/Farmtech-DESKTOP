@@ -125,6 +125,12 @@ namespace WinFormsApp1
             string json2 = JsonConvert.SerializeObject(produtos);
             Console.WriteLine("Producao: " + json + "Produtos: " + json2);
         }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+               
     }
     // private void label1_Click(object sender, EventArgs e)
     // {

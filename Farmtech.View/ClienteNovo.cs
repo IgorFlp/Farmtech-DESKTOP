@@ -50,14 +50,12 @@ namespace Farmtech.View
 
             
             string res = ClienteModel.Criar(cliente,endereco);
-            Alerta alerta = new Alerta();
-            alerta.LblAlerta.Text = res;
-            alerta.Show();
-
-            
-            //Console.WriteLine(JsonConvert.SerializeObject(cliente));
-            //Console.WriteLine(JsonConvert.SerializeObject(endereco));
-
+            MessageBox.Show(res);  
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

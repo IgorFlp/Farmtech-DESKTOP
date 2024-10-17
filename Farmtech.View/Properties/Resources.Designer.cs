@@ -113,6 +113,16 @@ namespace Farmtech_DESKTOP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lixeira1 {
+            get {
+                object obj = ResourceManager.GetObject("Lixeira1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pesquisa {
             get {
                 object obj = ResourceManager.GetObject("Pesquisa", resourceCulture);
