@@ -120,6 +120,51 @@ namespace Farmtech.DAO
                 return "Sucesso";
             }
         }
+        public static string CriarEstoque(int pdt_id, double quant)
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "INSERT INTO Tb_estoque (pdt_id, quant) VALUES (@pdt_id,@quant)";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<EstoqueEnt> estoques = new List<EstoqueEnt>();
+
+                    cmd.Parameters.AddWithValue("@pdt_id",pdt_id);    
+                    cmd.Parameters.AddWithValue("@quant",quant);
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                    return "Sucesso";
+                }
+
+            }
+        }
+        public static string DeleteEstoque(int pdt_id)
+        {
+            using (SqlConnection conn = new SqlConnection(configBanco.connectionString))
+            {
+                conn.Open();
+
+                // Consulta para buscar os dados do usuario
+                string query = "DELETE FROM Tb_estoque WHERE pdt_id = @pdt_id";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    List<EstoqueEnt> estoques = new List<EstoqueEnt>();
+
+                    cmd.Parameters.AddWithValue("@pdt_id", pdt_id);                    
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                    return "Sucesso";
+                }
+
+            }
+        }
         public static List<EstoqueEnt> BuscarEstoques()
         {
             using (SqlConnection conn = new SqlConnection(configBanco.connectionString))

@@ -12,28 +12,31 @@ namespace Farmtech.DAO
 {
     public class ProdutoDAO
     {
-        public string Criar(ProdutoEnt produto) {
+        public ProdutoEnt Criar(ProdutoEnt produto) {
             using (SqlConnection sqlconn = new SqlConnection(configBanco.connectionString))
             {
                 try
                 {
                     sqlconn.Open();
-                    string query = "INSERT INTO Tb_produto (nome,unMedida,precoUn) VALUES (@nome,@unMedida,@precoUn)";
+                    string query = "INSERT INTO Tb_produto (nome,unMedida,precoUn) VALUES (@nome,@unMedida,@precoUn);SELECT SCOPE_IDENTITY();";
                     SqlCommand cmd = new SqlCommand(query, sqlconn);
                     cmd.Parameters.AddWithValue("@nome", produto.Nome);
                     cmd.Parameters.AddWithValue("@unMedida", produto.UnMedida);
-                    cmd.Parameters.AddWithValue("@precoUn", produto.PrecoUn);                    
-                    
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@precoUn", produto.PrecoUn);
 
+                    object result = cmd.ExecuteScalar();
+
+                    
+                    int novoId = Convert.ToInt32(result);
+                    produto.Id = novoId;
                     cmd.Parameters.Clear();
                     sqlconn.Close();
 
-                    return "Produto cadastrado com sucesso!";
+                    return produto;
                 }
                 catch (Exception ex)
                 {
-                    return "Erro no cadastro de produto " + ex.Message;                    
+                    return null;                    
                 }
 
             }                        

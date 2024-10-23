@@ -426,9 +426,12 @@ namespace Farmtech_DESKTOP
                 string quantsString = "";
                 foreach (VendaProdutoEnt produto in vendaProdutos)
                 {
-                     quantsString += $"{produto.Quant}{Environment.NewLine}";
+                    if (Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[13].Value) == produto.Ven_id)
+                    {
+                        quantsString += $"{produto.Quant}{Environment.NewLine}";
+                    }
                 }
-                tabelaRelatorio.Rows[i].Cells[3].Value = produtosString;
+                tabelaRelatorio.Rows[i].Cells[3].Value = quantsString;
 
                 //Usuario nome                
                 int vendaId = Convert.ToInt32(tabelaRelatorio.Rows[i].Cells[13].Value);

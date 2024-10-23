@@ -13,12 +13,16 @@ namespace Farmtech.Model
         public string Criar(ProdutoEnt produto)
         {            
                 ProdutoDAO produtoDAO = new ProdutoDAO();
-                string res = produtoDAO.Criar(produto);
+                ProdutoEnt p = produtoDAO.Criar(produto);
+                
+                int id = p.Id;
+                string res = EstoqueDAO.CriarEstoque(id,100.0);
                 return res;
             
         }
         public string Excluir(int id)
         {
+            EstoqueDAO.DeleteEstoque(id);
             ProdutoDAO produtoDAO = new ProdutoDAO();
             string res = produtoDAO.Excluir(id);
             return res;
