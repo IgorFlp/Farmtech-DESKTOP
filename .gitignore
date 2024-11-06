@@ -362,3 +362,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Farmtech.View/bin/Debug/Farmtech-DESKTOP.exe
+/Farmtech.View/bin/Debug/Farmtech-DESKTOP.exe.config
+/Farmtech.View/bin/Debug/Farmtech-DESKTOP.pdb

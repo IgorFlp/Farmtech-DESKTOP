@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Farmtech.Entidades
 {
-    internal class ProdutoEnt
+    public class ProdutoEnt
     {
         private int id;
         private string nome;

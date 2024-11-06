@@ -1,3 +1,4 @@
+using Farmtech_DESKTOP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace Farmtech.View
 {
@@ -15,35 +17,54 @@ namespace Farmtech.View
         public Inicio()
         {
             InitializeComponent();
-        }
+        }    
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+            Usuario usuario = new Usuario();
+            usuario.Show();
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnFornecedores_Click(object sender, EventArgs e)
         {
-           
-        }
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
+            Fornecedor fornecedor = new Fornecedor();
+            fornecedor.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            Cliente cliente = new Cliente();
+            cliente.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnProdutos_Click(object sender, EventArgs e)
         {
-            
+            Produto produto = new Produto();
+            produto.Show();
+        }
+
+        private void btnProducao_Click(object sender, EventArgs e)
+        {
+            Producao producao = new Producao();
+            producao.Show();
+        }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            Relatorios relatorios = new Relatorios();
+            relatorios.Show();
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            Vendas vendas = new Vendas();
+            vendas.Show();
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
