@@ -47,10 +47,29 @@ namespace Farmtech.View
             endereco.Cidade = txtCidade.Text;
             endereco.Estado = cbEstado.Text;
             endereco.Cep = txtCep.Text;
-
-            ClienteModel clienteModel = new ClienteModel();
-            string res = clienteModel.Atualizar(cliente,endereco);
-            MessageBox.Show(res); 
+            if (
+            txtNome.Text != String.Empty &&
+            txtCpf.Text != String.Empty &&
+            txtTelefone.Text != String.Empty &&
+            txtEmail.Text != String.Empty &&
+            dataNasc.Value != null &&
+            txtRua.Text != String.Empty &&
+            txtBairro.Text != String.Empty &&
+            txtCidade.Text != String.Empty &&
+            cbEstado.Text != String.Empty &&
+            txtCep.Text != String.Empty
+                )
+            {
+                ClienteModel clienteModel = new ClienteModel();
+                string res = clienteModel.Atualizar(cliente, endereco);
+                MessageBox.Show(res);
+                this.Hide();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos corretamente");
+            }
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)

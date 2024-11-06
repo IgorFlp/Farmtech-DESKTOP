@@ -60,6 +60,7 @@ namespace Farmtech.View
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.Location = new System.Drawing.Point(22, 36);
+            this.txtRazaoSocial.MaxLength = 50;
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(250, 20);
             this.txtRazaoSocial.TabIndex = 0;
@@ -76,7 +77,7 @@ namespace Farmtech.View
             // txtCnpj
             // 
             this.txtCnpj.Location = new System.Drawing.Point(22, 79);
-            this.txtCnpj.MaxLength = 11;
+            this.txtCnpj.MaxLength = 14;
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(139, 20);
             this.txtCnpj.TabIndex = 2;
@@ -92,6 +93,7 @@ namespace Farmtech.View
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(22, 129);
+            this.txtRua.MaxLength = 80;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(204, 20);
             this.txtRua.TabIndex = 4;
@@ -99,6 +101,7 @@ namespace Farmtech.View
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(238, 129);
+            this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(67, 20);
             this.txtBairro.TabIndex = 5;
@@ -132,6 +135,7 @@ namespace Farmtech.View
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(339, 79);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(202, 20);
             this.txtEmail.TabIndex = 9;
@@ -139,6 +143,7 @@ namespace Farmtech.View
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(339, 129);
+            this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(81, 20);
             this.txtCidade.TabIndex = 10;
@@ -271,6 +276,7 @@ namespace Farmtech.View
             // txtNomeFantasia
             // 
             this.txtNomeFantasia.Location = new System.Drawing.Point(291, 36);
+            this.txtNomeFantasia.MaxLength = 50;
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(250, 20);
             this.txtNomeFantasia.TabIndex = 24;

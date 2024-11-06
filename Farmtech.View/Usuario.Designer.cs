@@ -96,6 +96,7 @@
             // 
             this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(26, 27);
+            this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(196, 20);
             this.txtNome.TabIndex = 9;
@@ -104,6 +105,7 @@
             // 
             this.txtLogin.Enabled = false;
             this.txtLogin.Location = new System.Drawing.Point(250, 27);
+            this.txtLogin.MaxLength = 30;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(153, 20);
             this.txtLogin.TabIndex = 10;
@@ -112,7 +114,9 @@
             // 
             this.txtSenha.Enabled = false;
             this.txtSenha.Location = new System.Drawing.Point(436, 26);
+            this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(145, 20);
             this.txtSenha.TabIndex = 11;
             // 

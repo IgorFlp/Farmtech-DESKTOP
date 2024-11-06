@@ -233,7 +233,7 @@ namespace Farmtech.View
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(65, 20);
             this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "R$ 35,00";
+            this.lblTotal.Text = "R$ 00,00";
             // 
             // label9
             // 
@@ -294,7 +294,7 @@ namespace Farmtech.View
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(65, 20);
             this.lblSubtotal.TabIndex = 1;
-            this.lblSubtotal.Text = "R$ 45,00";
+            this.lblSubtotal.Text = "R$ 00,00";
             // 
             // label5
             // 

@@ -168,6 +168,7 @@ namespace WinFormsApp1
             this.btnCancelar.Size = new System.Drawing.Size(58, 37);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnConfirmar
             // 

@@ -120,27 +120,37 @@ namespace Farmtech.View
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             ProdutoModel produtoModel = new ProdutoModel();
-            ProdutoEnt produto = new ProdutoEnt();            
-            produto.PrecoUn = Convert.ToDouble(txtPreco.Text);  
-            produto.UnMedida = cbUnidade.Text;
-            produto.Nome = txtNome.Text;
-            if(tipo == "Novo")
+            ProdutoEnt produto = new ProdutoEnt();
+            if (txtNome.Text != String.Empty &&
+                txtPreco.Text != String.Empty &&
+                cbUnidade.Text != String.Empty&& Convert.ToDecimal(cbUnidade.Text) > 0)
             {
-                produtoModel.Criar(produto);
-                
-            }else if(tipo == "Alterar")
-            {
-                produto.Id = produtoId;
-                produtoModel.Atualizar(produto);
-                
-            }
-            limparCampos();
-            desabilitarCampos();
+                produto.PrecoUn = Convert.ToDouble(txtPreco.Text);
+                produto.UnMedida = cbUnidade.Text;
+                produto.Nome = txtNome.Text;
+                if (tipo == "Novo")
+                {
+                    produtoModel.Criar(produto);
 
-            this.Hide();
-            Form novoForm = new Produto();
-            novoForm.ShowDialog();
-            this.Close();
+                }
+                else if (tipo == "Alterar")
+                {
+                    produto.Id = produtoId;
+                    produtoModel.Atualizar(produto);
+
+                }
+                limparCampos();
+                desabilitarCampos();
+
+                this.Hide();
+                Form novoForm = new Produto();
+                novoForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos corretamente");
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

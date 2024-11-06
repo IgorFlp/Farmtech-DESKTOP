@@ -79,6 +79,7 @@ namespace Farmtech.View
             // 
             this.txtCnpj.Location = new System.Drawing.Point(22, 79);
             this.txtCnpj.MaxLength = 11;
+            this.txtCnpj.Enabled = false;
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Text = fornecedor.Cnpj;
             this.txtCnpj.Size = new System.Drawing.Size(139, 20);

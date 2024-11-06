@@ -62,6 +62,7 @@ namespace Farmtech.View
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(22, 36);
+            this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(283, 20);
             this.txtNome.TabIndex = 0;
@@ -94,6 +95,7 @@ namespace Farmtech.View
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(22, 129);
+            this.txtRua.MaxLength = 80;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(204, 20);
             this.txtRua.TabIndex = 4;
@@ -101,6 +103,7 @@ namespace Farmtech.View
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(238, 129);
+            this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(67, 20);
             this.txtBairro.TabIndex = 5;
@@ -134,6 +137,7 @@ namespace Farmtech.View
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(339, 79);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(202, 20);
             this.txtEmail.TabIndex = 9;
@@ -141,6 +145,7 @@ namespace Farmtech.View
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(339, 129);
+            this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(81, 20);
             this.txtCidade.TabIndex = 10;
@@ -302,7 +307,7 @@ namespace Farmtech.View
             this.dataNasc.TabIndex = 24;
             this.dataNasc.Value = new System.DateTime(2024, 8, 31, 0, 0, 0, 0);
             // 
-            // Cliente
+            // ClienteNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,7 +341,7 @@ namespace Farmtech.View
             this.Controls.Add(this.txtNome);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Cliente";
+            this.Name = "ClienteNovo";
             this.Text = "Farm tech - Cadastro de Clientes ";
             this.ResumeLayout(false);
             this.PerformLayout();

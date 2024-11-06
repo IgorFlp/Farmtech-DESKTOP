@@ -64,6 +64,7 @@ namespace Farmtech.View
             // 
             this.txtNome.Location = new System.Drawing.Point(22, 36);
             this.txtNome.Name = "txtNome";
+            this.txtNome.MaxLength = 50;
             this.txtNome.Size = new System.Drawing.Size(283, 20);
             this.txtNome.TabIndex = 0;
             this.txtNome.Text = clienteEnt.Nome;
@@ -100,6 +101,7 @@ namespace Farmtech.View
             // 
             this.txtRua.Location = new System.Drawing.Point(22, 129);
             this.txtRua.Name = "txtRua";
+            this.txtRua.MaxLength = 80;
             this.txtRua.Size = new System.Drawing.Size(204, 20);
             this.txtRua.TabIndex = 4;
             this.txtRua.Text = enderecoEnt.Rua;
@@ -108,6 +110,7 @@ namespace Farmtech.View
             // 
             this.txtBairro.Location = new System.Drawing.Point(238, 129);
             this.txtBairro.Name = "txtBairro";
+            this.txtBairro.MaxLength = 30;
             this.txtBairro.Size = new System.Drawing.Size(67, 20);
             this.txtBairro.TabIndex = 5;
             this.txtBairro.Text = enderecoEnt.Bairro;
@@ -142,6 +145,7 @@ namespace Farmtech.View
             // 
             this.txtEmail.Location = new System.Drawing.Point(339, 79);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Size = new System.Drawing.Size(202, 20);
             this.txtEmail.TabIndex = 9;
             this.txtEmail.Text = clienteEnt.Email;
@@ -150,6 +154,7 @@ namespace Farmtech.View
             // 
             this.txtCidade.Location = new System.Drawing.Point(339, 129);
             this.txtCidade.Name = "txtCidade";
+            this.txtCidade.MaxLength = 30;
             this.txtCidade.Size = new System.Drawing.Size(81, 20);
             this.txtCidade.TabIndex = 10;
             this.txtCidade.Text = enderecoEnt.Cidade;

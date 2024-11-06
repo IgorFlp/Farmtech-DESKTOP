@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.cbUnidade = new System.Windows.Forms.ComboBox();
             this.dataGridProdutos = new System.Windows.Forms.DataGridView();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +49,12 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.tb_produtoTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter();
+            this.txtPreco = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,17 +88,10 @@
             // 
             this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(26, 27);
+            this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(305, 20);
             this.txtNome.TabIndex = 9;
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Enabled = false;
-            this.txtPreco.Location = new System.Drawing.Point(463, 26);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(80, 20);
-            this.txtPreco.TabIndex = 11;
             // 
             // cbUnidade
             // 
@@ -240,15 +234,34 @@
             // 
             this.tb_produtoTableAdapter.ClearBeforeFill = true;
             // 
+            // txtPreco
+            // 
+            this.txtPreco.DecimalPlaces = 2;
+            this.txtPreco.Enabled = false;
+            this.txtPreco.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            131072});
+            this.txtPreco.Location = new System.Drawing.Point(463, 28);
+            this.txtPreco.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(80, 20);
+            this.txtPreco.TabIndex = 15;
+            // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.dataGridProdutos);
             this.Controls.Add(this.cbUnidade);
-            this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -266,6 +279,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbusuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +295,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.ComboBox cbUnidade;
         private System.Windows.Forms.DataGridView dataGridProdutos;
         private Farmtech_DESKTOP.Db_FarmtechDataSet db_FarmtechDataSet;
@@ -294,5 +307,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn precoUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown txtPreco;
     }
 }
