@@ -139,7 +139,7 @@ namespace Farmtech.Model
             enderecoEnt = fornecedorDAO.BuscarEndereco(cnpj);
             return enderecoEnt;
         }
-        public string Atualizar(FornecedorEnt fornecedorEnt, FornecedorEnderecoEnt enderecoEnt)
+        public static string Atualizar(FornecedorEnt fornecedorEnt, FornecedorEnderecoEnt enderecoEnt)
         {
             FornecedorDAO fornecedorDAO = new FornecedorDAO();
             String res = fornecedorDAO.Atualizar(fornecedorEnt, enderecoEnt);

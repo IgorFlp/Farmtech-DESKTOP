@@ -119,9 +119,9 @@ namespace Farmtech.View
             // 
             // btnCancela
             // 
-            this.btnCancela.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancela.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancela.BackgroundImage")));
-            this.btnCancela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancela.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancela.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Cancelar;
+            this.btnCancela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancela.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancela.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnCancela.Location = new System.Drawing.Point(76, 205);
@@ -302,7 +302,7 @@ namespace Farmtech.View
             this.dataNasc.TabIndex = 24;
             this.dataNasc.Value = new System.DateTime(2024, 8, 31, 0, 0, 0, 0);
             // 
-            // Cliente
+            // ClienteNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,7 +336,7 @@ namespace Farmtech.View
             this.Controls.Add(this.txtNome);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Cliente";
+            this.Name = "ClienteNovo";
             this.Text = "Farm tech - Cadastro de Clientes ";
             this.ResumeLayout(false);
             this.PerformLayout();

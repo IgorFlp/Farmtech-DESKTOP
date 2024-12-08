@@ -32,6 +32,8 @@ namespace Farmtech_DESKTOP
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             FornecedorNovo fornecedorNovo = new FornecedorNovo();
+            this.Hide();
+            this.Close();
             fornecedorNovo.Show();
         }
 
@@ -76,7 +78,10 @@ namespace Farmtech_DESKTOP
                string json2 = JsonConvert.SerializeObject(enderecoEnt);
                Console.WriteLine("Fornecedor: "+json+"Endereco: "+json2);
                FornecedorAlterar fornecedorAlterar = new FornecedorAlterar(fornecedorEnt,enderecoEnt);
-               
+
+               this.Hide();
+               this.Close();
+
                fornecedorAlterar.Show();
                 
 

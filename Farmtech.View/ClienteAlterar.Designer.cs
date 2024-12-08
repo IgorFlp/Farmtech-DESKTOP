@@ -126,9 +126,9 @@ namespace Farmtech.View
             // 
             // btnCancela
             // 
-            this.btnCancela.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancela.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancela.BackgroundImage")));
-            this.btnCancela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancela.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancela.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Cancelar;
+            this.btnCancela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancela.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancela.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
             this.btnCancela.Location = new System.Drawing.Point(76, 205);

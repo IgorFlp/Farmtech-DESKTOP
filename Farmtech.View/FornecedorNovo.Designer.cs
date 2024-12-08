@@ -76,7 +76,7 @@ namespace Farmtech.View
             // txtCnpj
             // 
             this.txtCnpj.Location = new System.Drawing.Point(22, 79);
-            this.txtCnpj.MaxLength = 11;
+            this.txtCnpj.MaxLength = 14;
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(139, 20);
             this.txtCnpj.TabIndex = 2;
@@ -117,7 +117,7 @@ namespace Farmtech.View
             // 
             // btnCancela
             // 
-            this.btnCancela.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancela.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancela.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancela.BackgroundImage")));
             this.btnCancela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancela.Cursor = System.Windows.Forms.Cursors.Hand;

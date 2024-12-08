@@ -127,7 +127,7 @@ namespace Farmtech.View
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnUsuarios.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnUsuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.BackgroundImage")));
             this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 7F);
@@ -154,7 +154,7 @@ namespace Farmtech.View
             // 
             // btnFornecedores
             // 
-            this.btnFornecedores.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnFornecedores.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFornecedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.BackgroundImage")));
             this.btnFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFornecedores.Font = new System.Drawing.Font("Segoe UI", 7F);

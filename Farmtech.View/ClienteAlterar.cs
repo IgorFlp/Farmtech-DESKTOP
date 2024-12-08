@@ -50,12 +50,21 @@ namespace Farmtech.View
 
             ClienteModel clienteModel = new ClienteModel();
             string res = clienteModel.Atualizar(cliente,endereco);
-            MessageBox.Show(res); 
+            MessageBox.Show(res);
+            this.Hide();
+            this.Close();
+
+            this.Hide();
+            Form novoForm = new Cliente();
+            novoForm.ShowDialog();
+            this.Close();
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Form novoForm = new Cliente();
+            novoForm.ShowDialog();
             this.Close();
         }
     }

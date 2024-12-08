@@ -44,12 +44,11 @@
             this.db_FarmtechDataSet = new Farmtech_DESKTOP.Db_FarmtechDataSet();
             this.tbusuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_usuarioTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_usuarioTableAdapter();
-            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.tb_produtoTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
-            this.tb_produtoTableAdapter = new Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprodutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FarmtechDataSet)).BeginInit();
@@ -77,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(460, 8);
+            this.label3.Location = new System.Drawing.Point(481, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 7;
@@ -94,9 +93,9 @@
             // txtPreco
             // 
             this.txtPreco.Enabled = false;
-            this.txtPreco.Location = new System.Drawing.Point(463, 26);
+            this.txtPreco.Location = new System.Drawing.Point(484, 25);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(80, 20);
+            this.txtPreco.Size = new System.Drawing.Size(118, 20);
             this.txtPreco.TabIndex = 11;
             // 
             // cbUnidade
@@ -108,7 +107,7 @@
             "Un"});
             this.cbUnidade.Location = new System.Drawing.Point(357, 26);
             this.cbUnidade.Name = "cbUnidade";
-            this.cbUnidade.Size = new System.Drawing.Size(79, 21);
+            this.cbUnidade.Size = new System.Drawing.Size(100, 21);
             this.cbUnidade.TabIndex = 12;
             // 
             // dataGridProdutos
@@ -181,22 +180,16 @@
             // 
             this.tb_usuarioTableAdapter.ClearBeforeFill = true;
             // 
-            // btnAtualizar
+            // tb_produtoTableAdapter
             // 
-            this.btnAtualizar.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Atualizar;
-            this.btnAtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAtualizar.Location = new System.Drawing.Point(704, 63);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(34, 34);
-            this.btnAtualizar.TabIndex = 14;
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            this.tb_produtoTableAdapter.ClearBeforeFill = true;
             // 
             // btnSalvar
             // 
             this.btnSalvar.BackgroundImage = global::Farmtech_DESKTOP.Properties.Resources.Salvar;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalvar.Location = new System.Drawing.Point(745, 63);
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Location = new System.Drawing.Point(627, 11);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(34, 34);
             this.btnSalvar.TabIndex = 4;
@@ -236,16 +229,11 @@
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
-            // tb_produtoTableAdapter
-            // 
-            this.tb_produtoTableAdapter.ClearBeforeFill = true;
-            // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.dataGridProdutos);
             this.Controls.Add(this.cbUnidade);
             this.Controls.Add(this.txtPreco);
@@ -287,7 +275,6 @@
         private Farmtech_DESKTOP.Db_FarmtechDataSet db_FarmtechDataSet;
         private System.Windows.Forms.BindingSource tbusuarioBindingSource;
         private Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_usuarioTableAdapter tb_usuarioTableAdapter;
-        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.BindingSource tbprodutoBindingSource;
         private Farmtech_DESKTOP.Db_FarmtechDataSetTableAdapters.Tb_produtoTableAdapter tb_produtoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;

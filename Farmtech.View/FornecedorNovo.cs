@@ -41,15 +41,20 @@ namespace Farmtech.View
 
             
             string res = FornecedorModel.Criar(fornecedor,endereco);
-            Alerta alerta = new Alerta();
-            alerta.LblAlerta.Text = res;
-            alerta.Show();
+            MessageBox.Show(res);
+
+            this.Hide();
+            Form novoForm = new Fornecedor();
+            novoForm.ShowDialog();
+            this.Close();
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.Close();
+            Form novoForm = new Fornecedor();
+            novoForm.ShowDialog();
+            this.Close();            
         }
     }
 }

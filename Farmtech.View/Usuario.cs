@@ -141,12 +141,6 @@ namespace Farmtech.View
             this.Close();
         }
 
-        private void btnAtalizar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form novoForm = new Usuario();
-            novoForm.ShowDialog(); 
-            this.Close();
-        }
+       
     }
 }

@@ -47,12 +47,14 @@ namespace Farmtech.View
             txtNome.Enabled = true;            
             txtPreco.Enabled = true;
             cbUnidade.Enabled = true;
+            btnSalvar.Enabled = true;
         }
         private void desabilitarCampos()
         {
             txtNome.Enabled = false;           
             txtPreco.Enabled = false;
             cbUnidade.Enabled = false;
+            btnSalvar.Enabled = false;
         }
         private void limparCampos()
         {

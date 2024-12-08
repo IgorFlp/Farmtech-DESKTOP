@@ -32,7 +32,11 @@ namespace Farmtech_DESKTOP
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             ClienteNovo clienteNovo = new ClienteNovo();
+            this.Hide();
+            this.Close();
             clienteNovo.Show();
+
+            
         }
 
         private void btnExluir_Click(object sender, EventArgs e)
@@ -46,6 +50,7 @@ namespace Farmtech_DESKTOP
                 ClienteModel clienteModel = new ClienteModel();
                 string res = clienteModel.Excluir(clienteCpf);
 
+                
                 this.Hide();
                 Form novoForm = new Cliente();
                 novoForm.ShowDialog();
@@ -77,6 +82,9 @@ namespace Farmtech_DESKTOP
                //MessageBox.Show("Cliente: "+json+"Endereco: "+json2);
                ClienteAlterar clienteAlterar = new ClienteAlterar(clienteEnt,enderecoEnt);
                clienteAlterar.Show();
+               
+               this.Hide();
+               this.Close();
             }
             else
             {

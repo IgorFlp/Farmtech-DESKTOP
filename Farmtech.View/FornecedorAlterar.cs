@@ -40,17 +40,21 @@ namespace Farmtech.View
             endereco.Cep = txtCep.Text;
 
             
-            string res = FornecedorModel.Criar(fornecedor,endereco);
+            string res = FornecedorModel.Atualizar(fornecedor,endereco);
             DialogResult ok = MessageBox.Show(res);
             if (ok == DialogResult.OK)
             {
                 this.Hide();
-                this.Close();                
+                Form novoForm = new Fornecedor();
+                novoForm.ShowDialog();
+                this.Close();
             } 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Form novoForm = new Fornecedor();
+            novoForm.ShowDialog();
             this.Close();
         }
     }
