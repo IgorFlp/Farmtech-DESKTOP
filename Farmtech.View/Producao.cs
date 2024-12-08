@@ -89,66 +89,60 @@ namespace WinFormsApp1
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+
             ProducaoEnt producaoEnt = new ProducaoEnt();
             producaoEnt.DataProd = DateTime.Now;
-
-            producaoEnt = ProducaoModel.CadastrarProducao(producaoEnt);
-
-            List<ProducaoProdutoEnt> produtos = new List<ProducaoProdutoEnt>();
-            for (int i = 0; i < tabelaProducao.RowCount; i++)
+            if (tabelaProducao.RowCount <= 0)
             {
-                ProducaoProdutoEnt produto = new ProducaoProdutoEnt();
-                produto.Pdc_id = producaoEnt.Id;
-                produto.Quant = Convert.ToDouble(tabelaProducao.Rows[i].Cells[3].Value.ToString().Replace("R$ ", ""));
-                produto.Pdt_id = Convert.ToInt32(tabelaProducao.Rows[i].Cells[0].Value.ToString().Replace("R$ ", ""));
-                produtos.Add(produto);
-            }
-            string produtoRes = ProducaoModel.CadastrarProdutos(produtos);
-            if (producaoEnt.Id > 0 && produtoRes == "Sucesso")
-            {
-                DialogResult dr = MessageBox.Show("Producao cadastrada com sucesso.");
-                if(dr == DialogResult.OK)
-                {
-                    this.Hide();
-                    Form novoForm = new Producao();
-                    novoForm.ShowDialog();
-                    this.Close();
-                }
-
+                MessageBox.Show("Insira produtos para poder confirmar a producao");
             }
             else
             {
-                MessageBox.Show("Erro no cadastro da producao.");
-            }
+                producaoEnt = ProducaoModel.CadastrarProducao(producaoEnt);
 
-            string json = JsonConvert.SerializeObject(producaoEnt);
-            string json2 = JsonConvert.SerializeObject(produtos);
-            Console.WriteLine("Producao: " + json + "Produtos: " + json2);
+                List<ProducaoProdutoEnt> produtos = new List<ProducaoProdutoEnt>();
+                for (int i = 0; i < tabelaProducao.RowCount; i++)
+                {
+                    ProducaoProdutoEnt produto = new ProducaoProdutoEnt();
+                    produto.Pdc_id = producaoEnt.Id;
+                    produto.Quant = Convert.ToDouble(tabelaProducao.Rows[i].Cells[3].Value.ToString().Replace("R$ ", ""));
+                    produto.Pdt_id = Convert.ToInt32(tabelaProducao.Rows[i].Cells[0].Value.ToString().Replace("R$ ", ""));
+                    produtos.Add(produto);
+                }
+                string produtoRes = ProducaoModel.CadastrarProdutos(produtos);
+                if (producaoEnt.Id > 0 && produtoRes == "Sucesso")
+                {
+                    DialogResult dr = MessageBox.Show("Producao cadastrada com sucesso.");
+                    if (dr == DialogResult.OK)
+                    {
+                        this.Hide();
+                        Form novoForm = new Producao();
+                        novoForm.ShowDialog();
+                        this.Close();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Erro no cadastro da producao.");
+                }
+
+                string json = JsonConvert.SerializeObject(producaoEnt);
+                string json2 = JsonConvert.SerializeObject(produtos);
+                Console.WriteLine("Producao: " + json + "Produtos: " + json2);
+            }
         }
 
         private void groupBox5_Enter(object sender, EventArgs e)
         {
 
         }
-               
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
-    // private void label1_Click(object sender, EventArgs e)
-    // {
-
-    // }
-
-    //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-
-    // }
-
-    // private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-    // {
-
-    //}
-
-    // private void label2_Click(object sender, EventArgs e)
-    //{
-
-    // }
+    
 }

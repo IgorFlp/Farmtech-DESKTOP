@@ -236,72 +236,59 @@ namespace Farmtech.View
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             VendaEnt vendaEnt = new VendaEnt();
-            vendaEnt.Cl_cpf = slcCliente.SelectedValue.ToString();
-            vendaEnt.Subtotal = Convert.ToDouble(lblSubtotal.Text.Replace("R$ ",""));
-            vendaEnt.Frete = Convert.ToDouble(lblFrete.Text.Replace("R$ ",""));
-            vendaEnt.Desconto = Convert.ToDouble(lblDesconto.Text.Replace("R$ ",""));
-            vendaEnt.Total = Convert.ToDouble(lblTotal.Text.Replace("R$ ",""));
-            vendaEnt.Cupom = txtCupom.Text;
-            vendaEnt.MtdPagto = slcPagto.Text;
-            vendaEnt.Entrega = slcEntrega.Text;
-            vendaEnt.Usr_id = Convert.ToInt32(lblUsuario.Tag);
-            vendaEnt.DtVenda = DateTime.Now;
-
-            VendasModel vendaModel = new VendasModel();
-            vendaEnt = vendaModel.CadastrarVenda(vendaEnt);
-
-
-            List<VendaProdutoEnt> produtos = new List<VendaProdutoEnt>();
-            for(int i = 0;i < tabelaVenda.RowCount;i++)
-            {
-                VendaProdutoEnt produto = new VendaProdutoEnt();
-                produto.Ven_id = vendaEnt.Id;
-                produto.Quant = Convert.ToDouble(tabelaVenda.Rows[i].Cells[3].Value.ToString().Replace("R$ ", ""));
-                produto.Pdt_id = Convert.ToInt32(tabelaVenda.Rows[i].Cells[0].Value.ToString().Replace("R$ ", ""));
-                produtos.Add(produto);
+            if (tabelaVenda.RowCount <= 0) {
+                MessageBox.Show("Insira produtos para poder confirmar a venda");
             }
-            string produtoRes = vendaModel.CadastrarProdutos(produtos);
-            if (vendaEnt.Id > 0 && produtoRes == "Sucesso")
+            else
             {
-                DialogResult dr = MessageBox.Show("Venda cadastrada com sucesso.");
-                if (dr == DialogResult.OK)
+                vendaEnt.Cl_cpf = slcCliente.SelectedValue.ToString();
+                vendaEnt.Subtotal = Convert.ToDouble(lblSubtotal.Text.Replace("R$ ", ""));
+                vendaEnt.Frete = Convert.ToDouble(lblFrete.Text.Replace("R$ ", ""));
+                vendaEnt.Desconto = Convert.ToDouble(lblDesconto.Text.Replace("R$ ", ""));
+                vendaEnt.Total = Convert.ToDouble(lblTotal.Text.Replace("R$ ", ""));
+                vendaEnt.Cupom = txtCupom.Text;
+                vendaEnt.MtdPagto = slcPagto.Text;
+                vendaEnt.Entrega = slcEntrega.Text;
+                vendaEnt.Usr_id = Convert.ToInt32(lblUsuario.Tag);
+                vendaEnt.DtVenda = DateTime.Now;
+
+                VendasModel vendaModel = new VendasModel();
+                vendaEnt = vendaModel.CadastrarVenda(vendaEnt);
+
+
+                List<VendaProdutoEnt> produtos = new List<VendaProdutoEnt>();
+                for (int i = 0; i < tabelaVenda.RowCount; i++)
                 {
-                    this.Hide();
-                    Form novoForm = new Vendas();
-                    novoForm.ShowDialog();
-                    this.Close();
+                    VendaProdutoEnt produto = new VendaProdutoEnt();
+                    produto.Ven_id = vendaEnt.Id;
+                    produto.Quant = Convert.ToDouble(tabelaVenda.Rows[i].Cells[3].Value.ToString().Replace("R$ ", ""));
+                    produto.Pdt_id = Convert.ToInt32(tabelaVenda.Rows[i].Cells[0].Value.ToString().Replace("R$ ", ""));
+                    produtos.Add(produto);
                 }
+                string produtoRes = vendaModel.CadastrarProdutos(produtos);
+                if (vendaEnt.Id > 0 && produtoRes == "Sucesso")
+                {
+                    DialogResult dr = MessageBox.Show("Venda cadastrada com sucesso.");
+                    if (dr == DialogResult.OK)
+                    {
+                        this.Hide();
+                        Form novoForm = new Vendas();
+                        novoForm.ShowDialog();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro no cadastro da venda.");
+                }
+
+
+                string json = JsonConvert.SerializeObject(vendaEnt);
+                string json2 = JsonConvert.SerializeObject(produtos);
+                Console.WriteLine("Venda: " + json + "Produtos: " + json2);
+
+
             }
-            else {
-                MessageBox.Show("Erro no cadastro da venda.");
-            }
-            
-
-            string json = JsonConvert.SerializeObject(vendaEnt);
-            string json2 = JsonConvert.SerializeObject(produtos);
-            Console.WriteLine("Venda: "+json + "Produtos: "+json2);
-
-
-
         }
-    }
-    // private void label1_Click(object sender, EventArgs e)
-    // {
-
-    // }
-
-    //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-
-    // }
-
-    // private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-    // {
-
-    //}
-
-    // private void label2_Click(object sender, EventArgs e)
-    //{
-
-    // }
+    }    
 }

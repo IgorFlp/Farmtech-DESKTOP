@@ -119,26 +119,36 @@ namespace Farmtech.View
             UsuarioModel usuarioModel = new UsuarioModel();
             UsuarioEnt usuario = new UsuarioEnt();
             usuario.Login = txtLogin.Text;
-            usuario.Senha = txtSenha.Text;  
+            usuario.Senha = txtSenha.Text;
             usuario.Cargo = cbCargo.Text;
             usuario.Nome = txtNome.Text;
-            if(tipo == "Novo")
-            {
-                usuarioModel.Criar(usuario);
-                
-            }else if(tipo == "Alterar")
-            {
-                usuario.Id = usuarioId;
-                usuarioModel.Atualizar(usuario);
-                
-            }
-            limparCampos();
-            desabilitarCampos();
+            if (txtLogin.Text != String.Empty &&
+                txtSenha.Text != String.Empty &&
+                txtNome.Text != String.Empty &&
+                cbCargo.Text != String.Empty) {
+                if (tipo == "Novo")
+                {
+                    usuarioModel.Criar(usuario);
 
-            this.Hide();
-            Form novoForm = new Usuario();
-            novoForm.ShowDialog();
-            this.Close();
+                } else if (tipo == "Alterar")
+                {
+                    usuario.Id = usuarioId;
+                    usuarioModel.Atualizar(usuario);
+
+                }
+                limparCampos();
+                desabilitarCampos();
+
+                this.Hide();
+                Form novoForm = new Usuario();
+                novoForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos corretamente");                
+            }
+            
         }
 
        
